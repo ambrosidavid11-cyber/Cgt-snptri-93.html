@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#8b0000">
+<title>CGT SNPTRI 93 — Section Nord</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+:root{--r:#b71c1c;--r2:#7f0000;--r3:#c62828;--gold:#d4a843;--green:#2e7d32;
+--bg:#0e0e0e;--bg2:#161616;--bg3:#1e1e1e;--bg4:#262626;--bg5:#2e2e2e;
+--t:#f0f0f0;--t2:#aaa;--t3:#555;--t4:#333;
+--fh:"Barlow Condensed",sans-serif;--fb:"Barlow",sans-serif;}
+html,body{height:100%;background:var(--bg);color:var(--t);font-family:var(--fb);overflow-x:hidden;}
+.pg{display:none;min-height:100vh;padding-bottom:30px;animation:fi .22s ease;}
+.pg.on{display:block;}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.hdr{background:linear-gradient(135deg,var(--r2),var(--r) 60%,var(--r3));padding:44px 20px 20px;}
+.hdr h1{font-family:var(--fh);font-size:30px;font-weight:900;letter-spacing:1px;color:#fff;line-height:1;}
+.hdr p{font-size:11px;color:rgba(255,255,255,.6);margin-top:4px;letter-spacing:2px;text-transform:uppercase;}
+.hdr-badge{background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:4px 10px;font-family:var(--fh);font-size:11px;font-weight:800;letter-spacing:2px;color:#fff;display:inline-block;margin-bottom:10px;}
+.hdr-clock{margin-top:14px;background:rgba(0,0,0,.25);border-radius:10px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;}
+.hdr-time{font-family:var(--fh);font-size:26px;font-weight:800;color:#fff;letter-spacing:2px;}
+.hdr-date{font-size:11px;color:rgba(255,255,255,.6);text-align:right;line-height:1.6;}
+.hdr-date b{color:rgba(255,255,255,.9);font-weight:600;}
+.back-bar{background:var(--bg2);border-bottom:1px solid var(--bg4);display:flex;align-items:center;position:sticky;top:0;z-index:50;}
+.back-btn{background:none;border:none;color:var(--t2);padding:13px 16px;font-size:13px;font-family:var(--fb);cursor:pointer;border-right:1px solid var(--bg4);}
+.back-lbl{padding:0 16px;font-size:11px;color:var(--t3);font-family:var(--fh);letter-spacing:1px;text-transform:uppercase;}
+.menu{padding:16px;display:flex;flex-direction:column;gap:9px;}
+.mlbl{font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:2px;color:var(--t4);text-transform:uppercase;padding:4px 0 6px;display:flex;align-items:center;gap:8px;}
+.mlbl::after{content:"";flex:1;height:1px;background:var(--bg4);}
+.mc{background:var(--bg2);border-radius:13px;border:1px solid var(--bg4);cursor:pointer;display:flex;align-items:center;gap:13px;padding:14px 16px;position:relative;overflow:hidden;}
+.mc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;}
+.mc.red::before{background:var(--r);}.mc.blue::before{background:#1565c0;}.mc.green::before{background:var(--green);}.mc.purple::before{background:#6a1b9a;}.mc.orange::before{background:#e65100;}.mc.teal::before{background:#00695c;}
+.mc:active{opacity:.75;}
+.mc .ico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.mc .txt h3{font-family:var(--fh);font-size:18px;font-weight:700;color:var(--t);}
+.mc .txt p{font-size:12px;color:var(--t2);margin-top:1px;}
+.mc .arr{margin-left:auto;color:var(--t4);font-size:22px;flex-shrink:0;}
+.aw{padding:14px;display:flex;flex-direction:column;gap:10px;}
+.ac{background:var(--bg2);border-radius:12px;border-left:3px solid var(--r);overflow:hidden;}
+.ac .at{background:var(--bg3);padding:10px 14px;border-bottom:1px solid var(--bg4);}
+.ac .ad{font-size:10px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;font-weight:600;}
+.ac .an{font-family:var(--fh);font-size:17px;font-weight:700;margin-top:3px;}
+.ac .ab{padding:12px 14px;font-size:13px;color:#ccc;line-height:1.75;}
+.tg{display:inline-block;background:var(--r);color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:20px;margin-top:6px;letter-spacing:1px;}
+.klw{padding:14px;display:flex;flex-direction:column;gap:9px;}
+.kleg{background:var(--bg2);border-radius:10px;padding:12px 16px;border:1px solid var(--bg4);font-size:12px;color:var(--t2);line-height:1.85;}
+.kleg strong{color:var(--gold);}
+.kb{background:var(--bg2);border-radius:11px;overflow:hidden;border:1px solid var(--bg4);}
+.kbh{background:var(--bg3);padding:11px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--bg4);}
+.kn{font-family:var(--fh);font-size:16px;font-weight:800;letter-spacing:.5px;}
+.kbadge{background:var(--r);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;}
+.kbadge.off{background:var(--bg5);color:var(--t3);}
+.kr{padding:12px 14px;display:flex;align-items:center;gap:12px;}
+.kd{background:var(--r);border-radius:9px;padding:7px 10px;text-align:center;min-width:50px;flex-shrink:0;}
+.kdd{font-family:var(--fh);font-size:24px;font-weight:900;line-height:1;color:#fff;}
+.kdj{font-size:9px;color:rgba(255,255,255,.8);text-transform:uppercase;letter-spacing:1px;}
+.kit{font-family:var(--fh);font-size:16px;font-weight:700;}
+.kis{font-size:12px;color:var(--t2);margin-top:2px;}
+.kno{padding:11px 14px;font-size:12px;color:var(--t3);font-style:italic;}
+.cow{padding:14px;display:flex;flex-direction:column;gap:10px;}
+.corp{background:var(--bg2);border-radius:11px;overflow:hidden;border:1px solid var(--bg4);}
+.coh{background:linear-gradient(135deg,var(--r2),var(--r));padding:12px 14px;}
+.coh .cc{font-size:10px;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;}
+.coh .cn{font-family:var(--fh);font-size:16px;font-weight:700;margin-top:3px;line-height:1.3;color:#fff;}
+.ctb{width:100%;border-collapse:collapse;}
+.ctb th{background:var(--bg4);padding:8px 4px;font-size:9px;color:var(--gold);text-transform:uppercase;text-align:center;border-bottom:1px solid #333;letter-spacing:.5px;font-weight:700;}
+.ctb td{padding:7px 4px;font-size:11px;text-align:center;border-bottom:1px solid var(--bg4);color:var(--t2);}
+.ctb tr:last-child td{border-bottom:none;}
+.ctb td:first-child{color:var(--t3);font-weight:600;}
+.hl{color:var(--t)!important;font-weight:700;}
+.gr{color:#81c784!important;font-weight:700;}
+.cnot{padding:8px 14px;font-size:11px;color:var(--t3);font-style:italic;border-top:1px solid var(--bg4);}
+.rw{padding:14px;display:flex;flex-direction:column;gap:12px;}
+.rcard{background:var(--bg2);border-radius:12px;border:1px solid var(--bg4);overflow:hidden;}
+.rch{background:var(--bg3);padding:13px 16px;border-bottom:1px solid var(--bg4);}
+.rch h3{font-family:var(--fh);font-size:17px;font-weight:700;color:var(--gold);}
+.rch p{font-size:12px;color:var(--t2);margin-top:2px;}
+.rf{padding:16px;}
+.fr{margin-bottom:13px;}
+.fr label{font-size:10px;color:var(--t3);display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:1px;font-weight:600;}
+.fr input,.fr select{width:100%;background:var(--bg3);border:1px solid var(--bg4);border-radius:9px;color:var(--t);font-size:15px;padding:12px 14px;outline:none;font-family:var(--fb);}
+.fr input:focus,.fr select:focus{border-color:var(--r);}
+.fr input::placeholder{color:var(--t4);}
+.fr select option{background:#1e1e1e;}
+.fr2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.gbtn{background:linear-gradient(135deg,var(--r2),var(--r));color:#fff;border:none;border-radius:11px;width:100%;padding:16px;font-family:var(--fh);font-size:17px;font-weight:700;cursor:pointer;letter-spacing:.5px;}
+.gbtn:active{opacity:.85;}
+.prev{background:var(--bg2);border-radius:12px;border:2px dashed var(--bg5);padding:18px;display:none;}
+.prev.on{display:block;}
+.ph{text-align:center;border-bottom:2px solid var(--r);padding-bottom:14px;margin-bottom:16px;}
+.ph h2{font-family:var(--fh);font-size:22px;font-weight:900;color:var(--r);letter-spacing:1px;}
+.ph p{font-size:12px;color:var(--t2);margin-top:3px;}
+.pl{display:flex;justify-content:space-between;border-bottom:1px solid var(--bg4);padding:7px 0;font-size:13px;}
+.pl span:first-child{color:var(--t3);}
+.pl span:last-child{font-weight:700;}
+.pm{text-align:center;margin:16px 0;padding:14px;background:var(--bg3);border-radius:9px;border:1px solid var(--r);}
+.pm .pml{font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:1px;}
+.pm .pmv{font-family:var(--fh);font-size:30px;font-weight:900;color:var(--gold);margin-top:4px;}
+.psig{margin-top:18px;display:flex;justify-content:space-between;font-size:12px;color:var(--t3);}
+.pft{text-align:center;margin-top:16px;font-size:11px;color:var(--t3);font-style:italic;border-top:1px solid var(--bg4);padding-top:12px;line-height:1.7;}
+.abr{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;}
+.abr button{border:none;border-radius:9px;padding:13px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--fb);}
+.btn-cp{background:var(--bg3);color:var(--t);border:1px solid var(--bg5);}
+.btn-pr{background:var(--green);color:#fff;}
+.mw{padding:14px;display:flex;flex-direction:column;gap:10px;}
+.mo{background:var(--bg2);border-radius:11px;overflow:hidden;border:1px solid var(--bg4);}
+.mo .mt{background:linear-gradient(135deg,var(--r2),#8b0000);padding:13px 14px;display:flex;align-items:center;gap:12px;}
+.db{background:rgba(0,0,0,.35);border-radius:9px;padding:8px 11px;text-align:center;min-width:52px;flex-shrink:0;}
+.db .dj{font-family:var(--fh);font-size:26px;font-weight:900;line-height:1;}
+.db .dm{font-size:9px;text-transform:uppercase;color:rgba(255,255,255,.7);letter-spacing:1px;}
+.mn{font-family:var(--fh);font-size:17px;font-weight:700;}
+.ml{font-size:12px;color:rgba(255,255,255,.65);margin-top:2px;}
+.mo .mb{padding:12px 14px;font-size:13px;color:#bbb;line-height:1.7;}
+.cw{padding:14px;display:flex;flex-direction:column;gap:9px;}
+.rb{background:linear-gradient(135deg,var(--r2),var(--r));border-radius:11px;padding:16px;}
+.rb .rl{font-size:10px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;}
+.rb .nm{font-family:var(--fh);font-size:22px;font-weight:800;margin-top:4px;color:#fff;}
+.ci{background:var(--bg2);border-radius:10px;padding:13px 16px;border:1px solid var(--bg4);}
+.ci .lb{font-size:10px;color:var(--t3);margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;}
+.ci a{color:var(--t);text-decoration:none;font-size:15px;font-weight:600;display:block;word-break:break-all;}
+.ci a:active{color:var(--r3);}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--bg3);color:#fff;padding:12px 22px;border-radius:30px;font-size:13px;font-weight:600;transition:transform .3s cubic-bezier(.16,1,.3,1);z-index:9999;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,.5);border:1px solid var(--bg5);}
+.toast.on{transform:translateX(-50%) translateY(0);}
+.cal-mois{background:var(--bg3);border-radius:10px;overflow:hidden;border:1px solid var(--bg4);}
+.cal-mhdr{background:linear-gradient(135deg,var(--r2),var(--r));padding:8px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.cal-mnom{font-family:var(--fh);font-size:15px;font-weight:800;color:#fff;flex-shrink:0;}
+.cal-ce-wrap{display:flex;align-items:center;gap:5px;}
+.cal-ce-lbl{color:rgba(255,255,255,.7);font-size:10px;flex-shrink:0;}
+.cal-ce-inp{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:6px;color:#fff;font-size:12px;font-weight:700;text-align:center;width:44px;padding:3px 4px;font-family:var(--fh);outline:none;}
+.cal-ce-inp:focus{background:rgba(255,255,255,.25);}
+.cal-ce-inp::placeholder{opacity:.5;font-size:10px;font-weight:400;}
+.cal-grid{padding:6px;display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
+.cal-jnom{text-align:center;font-size:9px;font-weight:700;padding:2px 0;text-transform:uppercase;}
+.cal-cell{text-align:center;padding:5px 2px;border-radius:6px;font-size:12px;font-weight:600;}
+.cal-we{color:var(--t2);}
+.cal-normal{color:var(--t2);}
+.cal-today{background:var(--r);color:#fff;font-weight:800;}
+.cal-ce-day{background:rgba(21,101,192,.3);color:#7ab8f5;border:1px solid rgba(21,101,192,.4);font-weight:800;}
+.cal-leg{margin:4px 6px 6px;padding:5px 8px;background:rgba(21,101,192,.1);border-radius:6px;border:1px solid rgba(21,101,192,.2);font-size:11px;color:#7ab8f5;}
+@media print{.back-bar,.hdr,.menu,.rf,.abr,.toast{display:none!important;}.prev{display:block!important;border:none;background:#fff;color:#000;}.ph h2{color:#b71c1c;}.pl span:first-child{color:#666;}}
+
+.mc.brown::before{background:#4e342e;}
+.mc.cyan::before{background:#00838f;}
+.mc.lime::before{background:#558b2f;}
+.mc.pink::before{background:#ad1457;}
+.adh-search-wrap{background:var(--bg2);border:1px solid var(--bg4);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.adh-search-wrap input{background:none;border:none;color:var(--t);font-family:var(--fb);font-size:14px;flex:1;outline:none;}
+.adh-search-wrap input::placeholder{color:var(--t4);}
+.adh-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
+.adh-stat-box{background:var(--bg2);border:1px solid var(--bg4);border-radius:10px;padding:10px;text-align:center;}
+.adh-stat-box .asn{font-family:var(--fh);font-size:26px;font-weight:900;color:var(--gold);}
+.adh-stat-box .asl{font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
+.adh-card{background:var(--bg2);border:1px solid var(--bg4);border-radius:12px;overflow:hidden;margin-bottom:8px;}
+.adh-card .adh-main{display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer;}
+.adh-avatar{width:42px;height:42px;border-radius:50%;background:var(--r2);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:17px;font-weight:900;color:#fff;flex-shrink:0;border:2px solid var(--r3);}
+.adh-info{flex:1;}
+.adh-info .an{font-family:var(--fh);font-size:17px;font-weight:800;color:var(--t);}
+.adh-info .as{font-size:11px;color:var(--t2);margin-top:1px;}
+.adh-right{display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
+.adh-montant{font-family:var(--fh);font-size:15px;font-weight:800;color:var(--gold);}
+.adh-regl{font-size:10px;color:var(--t3);}
+.adh-detail{display:none;border-top:1px solid var(--bg4);padding:12px 14px;background:var(--bg3);}
+.adh-card.expanded .adh-detail{display:block;}
+.adh-dg{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.adh-di{background:var(--bg4);border-radius:8px;padding:10px;}
+.adh-di .dk{font-size:9px;color:var(--t4);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;}
+.adh-di .dv{font-size:12px;color:var(--t);font-weight:600;word-break:break-all;}
+.adh-df{background:var(--bg4);border-radius:8px;padding:10px;margin-top:6px;}
+.adh-num{font-size:10px;color:var(--t4);font-family:var(--fh);letter-spacing:1px;margin-bottom:6px;}
+.ftags{display:flex;gap:7px;margin-bottom:10px;overflow-x:auto;padding-bottom:2px;}
+.ftag{background:var(--bg2);border:1px solid var(--bg4);border-radius:20px;padding:6px 13px;font-size:11px;color:var(--t2);white-space:nowrap;cursor:pointer;font-family:var(--fh);font-weight:700;}
+.ftag.on{background:var(--r2);border-color:var(--r);color:#fff;}
+.cotis-row{display:grid;grid-template-columns:1fr 80px 90px 36px;gap:0;border-bottom:1px solid var(--bg4);align-items:center;}
+.cotis-row:last-child{border:none;}
+.cotis-row .cr-nom{padding:9px 12px;font-size:12px;font-weight:600;color:var(--t);}
+.cotis-row .cr-mnt{padding:9px 8px;font-size:12px;color:var(--gold);font-family:var(--fh);font-weight:700;text-align:center;}
+.cotis-row .cr-stat{padding:9px 4px;text-align:center;}
+.cotis-row .cr-del{padding:9px 8px;text-align:center;}
+.cotis-row .cr-del button{background:none;border:none;color:var(--t4);cursor:pointer;font-size:13px;}
+.stat-pill{display:inline-block;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;cursor:pointer;}
+.sp-ok{background:rgba(46,125,50,.2);color:#81c784;}
+.sp-att{background:rgba(232,160,32,.15);color:#f5a623;}
+.sp-ret{background:rgba(183,28,28,.2);color:#ef9a9a;}
+.budget-total{background:linear-gradient(135deg,var(--r2),var(--r));border-radius:12px;padding:16px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;}
+.bt-label{font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px;}
+.bt-val{font-family:var(--fh);font-size:28px;font-weight:900;color:#fff;}
+.budget-line{display:grid;grid-template-columns:1fr 90px 80px 36px;gap:0;border-bottom:1px solid var(--bg4);align-items:center;}
+.budget-line:last-child{border:none;}
+.bl-lib{padding:10px 12px;font-size:12px;color:var(--t);}
+.bl-mnt{padding:10px 8px;font-family:var(--fh);font-size:13px;font-weight:700;text-align:right;}
+.bl-mnt.rec{color:#81c784;}.bl-mnt.dep{color:#ef9a9a;}
+.bl-type{padding:10px 4px;text-align:center;}
+.bl-del{padding:10px 8px;text-align:center;}
+.bl-del button{background:none;border:none;color:var(--t4);cursor:pointer;font-size:14px;}
+.tract-prev{background:#fff;color:#111;border-radius:12px;padding:24px;margin-top:14px;font-family:Arial,sans-serif;}
+.tract-prev .th{text-align:center;border-bottom:3px solid #b71c1c;padding-bottom:14px;margin-bottom:16px;}
+.tract-prev .th h2{color:#b71c1c;font-size:24px;font-weight:900;}
+.tract-prev .tb{font-size:13px;line-height:1.85;color:#222;white-space:pre-wrap;}
+.tract-prev .tf{margin-top:16px;padding-top:12px;border-top:2px solid #b71c1c;text-align:center;font-style:italic;color:#555;font-size:11px;}
+.ctype-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+.ctype-btn{background:var(--bg2);border:1px solid var(--bg4);border-radius:10px;padding:12px 8px;cursor:pointer;text-align:center;font-family:var(--fh);font-size:13px;font-weight:700;color:var(--t2);}
+.ctype-btn.sel{background:rgba(183,28,28,.15);border-color:var(--r);color:#fff;}
+.ctype-btn .ce{font-size:20px;display:block;margin-bottom:4px;}
+.courrier-prev{background:#fff;color:#111;border-radius:12px;padding:24px;margin-top:14px;font-family:Arial,sans-serif;font-size:13px;line-height:1.85;display:none;}
+.courrier-prev.on{display:block;}
+.signal-card{background:var(--bg2);border-radius:12px;border-left:3px solid var(--r);overflow:hidden;margin-bottom:8px;}
+.signal-card .sc-hdr{background:var(--bg3);padding:10px 14px;border-bottom:1px solid var(--bg4);display:flex;align-items:center;justify-content:space-between;}
+.signal-card .sc-titre{font-family:var(--fh);font-size:15px;font-weight:700;}
+.signal-card .sc-date{font-size:10px;color:var(--t3);}
+.signal-card .sc-body{padding:10px 14px;font-size:12px;color:var(--t2);line-height:1.7;}
+.stat-open{border-left-color:var(--r)!important;}
+.stat-cours{border-left-color:#e8a020!important;}
+.stat-clos{border-left-color:var(--green)!important;}
+.agenda-item{background:var(--bg2);border-radius:11px;overflow:hidden;border:1px solid var(--bg4);margin-bottom:8px;display:flex;}
+.agenda-date{background:linear-gradient(135deg,var(--r2),var(--r));padding:12px 14px;min-width:60px;text-align:center;flex-shrink:0;}
+.agenda-date .ad-j{font-family:var(--fh);font-size:26px;font-weight:900;color:#fff;line-height:1;}
+.agenda-date .ad-m{font-size:9px;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;}
+.agenda-info{padding:12px 14px;flex:1;}
+.agenda-info .ai-t{font-family:var(--fh);font-size:16px;font-weight:700;color:var(--t);}
+.agenda-info .ai-s{font-size:12px;color:var(--t2);margin-top:2px;}
+.agenda-info .ai-l{font-size:11px;color:var(--t3);margin-top:3px;}
+.elec-countdown{background:linear-gradient(135deg,#1a237e,#283593);border-radius:14px;padding:20px;text-align:center;margin-bottom:14px;}
+.elec-countdown .ec-label{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:2px;text-transform:uppercase;}
+.elec-countdown .ec-num{font-family:var(--fh);font-size:52px;font-weight:900;color:#fff;line-height:1;}
+.elec-countdown .ec-unit{font-size:12px;color:rgba(255,255,255,.5);margin-top:2px;}
+.elec-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
+.elec-box{background:var(--bg2);border:1px solid var(--bg4);border-radius:10px;padding:14px;text-align:center;}
+.elec-box .eb-n{font-family:var(--fh);font-size:26px;font-weight:900;color:var(--gold);}
+.elec-box .eb-l{font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:1px;margin-top:3px;}
+.sim-result{background:var(--bg3);border-radius:12px;border:1px solid var(--bg4);overflow:hidden;margin-top:14px;display:none;}
+.sim-result.on{display:block;}
+.sim-rh{background:linear-gradient(135deg,var(--r2),var(--r));padding:12px 16px;}
+.sim-rh h3{font-family:var(--fh);font-size:17px;font-weight:800;color:#fff;}
+.sim-line{display:flex;justify-content:space-between;padding:9px 16px;border-bottom:1px solid var(--bg4);font-size:13px;}
+.sim-line:last-child{border:none;}
+.sim-line span:first-child{color:var(--t2);}
+.sim-line span:last-child{font-weight:700;color:var(--t);}
+.sim-line.total{background:rgba(255,255,255,.04);}
+.sim-line.total span{color:#fff!important;font-size:14px;}
+.sim-line.gn span:last-child{color:#81c784!important;}
+.sim-line.rd span:last-child{color:#ef9a9a!important;}
+
+
+/* WIDGETS */
+.wb{padding:0 16px;margin-bottom:10px;}
+.wc{background:#0e1c2e;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;}
+.wh{background:rgba(0,0,0,.25);padding:9px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.06);}
+.wht{font-size:10px;font-weight:800;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;font-family:var(--fh);}
+/* METEO */
+.mn{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;}
+.mi{font-size:54px;line-height:1;}
+.mr{text-align:right;}
+.mt{font-family:var(--fh);font-size:54px;font-weight:900;line-height:1;}
+.mt sup{font-size:22px;vertical-align:super;}
+.md{font-family:var(--fh);font-size:14px;color:rgba(255,255,255,.65);margin-top:4px;}
+.mf{font-size:11px;color:rgba(255,255,255,.35);margin-top:2px;}
+.mm2{font-size:12px;color:rgba(255,255,255,.45);margin-top:3px;}
+.mm2 b{color:#fff;}
+.ms{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.05);}
+.msi{padding:9px 5px;text-align:center;border-right:1px solid rgba(255,255,255,.05);}
+.msi:last-child{border:none;}
+.msie{font-size:14px;margin-bottom:2px;}
+.msiv{font-family:var(--fh);font-size:14px;font-weight:800;color:#fff;}
+.msil{font-size:8px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:1px;}
+.mda{border-top:1px solid rgba(255,255,255,.05);}
+.mdi{display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid rgba(255,255,255,.04);}
+.mdi:last-child{border:none;}
+.mdi.td{background:rgba(37,99,176,.1);}
+.mdn{font-family:var(--fh);font-size:13px;font-weight:700;color:rgba(255,255,255,.5);min-width:40px;}
+.mdic{font-size:16px;}
+.mdd{font-size:11px;color:rgba(255,255,255,.3);flex:1;}
+.mdmx{font-family:var(--fh);font-size:13px;font-weight:800;}
+.mdmn{font-family:var(--fh);font-size:12px;color:rgba(255,255,255,.3);margin-left:3px;}
+.mdp{font-size:10px;color:#7ab8f5;min-width:28px;text-align:right;}
+.msu{display:flex;align-items:center;gap:10px;padding:9px 14px;border-top:1px solid rgba(255,255,255,.05);}
+.msus{text-align:center;font-size:10px;color:rgba(255,255,255,.4);}
+.msus b{display:block;font-family:var(--fh);font-size:15px;font-weight:800;color:#f5a623;}
+.msub{flex:1;height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;}
+.msubf{height:100%;background:linear-gradient(90deg,#f5a623,#ff6b35);border-radius:2px;}
+.mbtn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:7px;color:rgba(255,255,255,.6);font-size:11px;padding:4px 12px;cursor:pointer;}
+.mmsg{padding:20px;text-align:center;font-size:13px;color:rgba(255,255,255,.4);}
+/* PAYE */
+.pb{padding:14px 16px;display:flex;align-items:center;gap:14px;}
+.pi{font-size:36px;}
+.pf{flex:1;}
+.pd{font-family:var(--fh);font-size:18px;font-weight:900;color:#fff;}
+.pl{font-size:11px;color:rgba(255,255,255,.4);margin-top:3px;}
+.pn{font-family:var(--fh);font-size:42px;font-weight:900;color:#f5a623;text-align:right;}
+.pnl{font-size:9px;color:rgba(255,255,255,.3);text-align:right;text-transform:uppercase;letter-spacing:1px;}
+.pbar{height:5px;background:rgba(255,255,255,.08);margin:0 16px 14px;}
+.pbarf{height:100%;background:linear-gradient(90deg,#f5a623,#ff9800);}
+/* FERIES */
+.frow{display:flex;align-items:center;gap:12px;padding:9px 16px;border-bottom:1px solid rgba(255,255,255,.04);}
+.frow:last-child{border:none;}
+.frow.fn{background:rgba(245,166,35,.06);}
+.fnb{font-family:var(--fh);font-size:20px;font-weight:900;min-width:36px;text-align:center;color:rgba(255,255,255,.3);}
+.fnb.fx{color:#f5a623;}
+.fnb.fs{color:#81c784;}
+.fnom{flex:1;font-size:13px;font-weight:600;color:#dce8f8;}
+.fdat{font-size:11px;color:rgba(255,255,255,.3);}
+/* COTIS RAPIDE */
+.crp{padding:14px 16px;}
+.crl{font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px;}
+.cri{width:100%;background:#132238;border:1px solid rgba(255,255,255,.1);border-radius:9px;color:#dce8f8;font-size:16px;padding:10px 13px;outline:none;box-sizing:border-box;margin-bottom:10px;}
+.cri:focus{border-color:#c62828;}
+.crr{background:rgba(198,40,40,.1);border:1px solid rgba(198,40,40,.2);border-radius:10px;padding:14px;text-align:center;display:none;}
+.crr.on{display:block;}
+.crrv{font-family:var(--fh);font-size:36px;font-weight:900;color:#c62828;}
+.crra{font-size:13px;color:rgba(255,255,255,.5);margin-top:5px;}
+.crra b{color:#f5a623;font-family:var(--fh);font-size:16px;}
+/* NUMS */
+.nsec{font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:2px;color:#3d6080;text-transform:uppercase;padding:10px 16px 5px;border-top:1px solid rgba(255,255,255,.04);}
+.nsec:first-child{border:none;padding-top:6px;}
+.nit{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.04);text-decoration:none;}
+.nit:last-child{border:none;}
+.nico{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.nnom{font-family:var(--fh);font-size:15px;font-weight:800;color:#dce8f8;}
+.ndesc{font-size:11px;color:#3d6080;margin-top:1px;}
+.ntel{font-family:var(--fh);font-size:16px;font-weight:900;color:#4caf50;flex-shrink:0;}
+.lit{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.04);text-decoration:none;}
+.lit:last-child{border:none;}
+.lico{font-size:22px;width:34px;text-align:center;flex-shrink:0;}
+.lnom{font-family:var(--fh);font-size:15px;font-weight:800;color:#dce8f8;flex:1;}
+.ldesc{font-size:11px;color:#3d6080;}
+.larr{color:#3d6080;font-size:20px;}
+/* ANIM */
+.aw{padding:0 16px;margin-bottom:10px;}
+.ab{background:#080808;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.06);height:88px;}
+#gcv{display:block;width:100%;height:100%;}
+</style>
+</head>
+<body>
+
+
+<div class="pg on" id="p-home">
+  <div class="hdr">
+    <div class="hdr-badge">CGT SNPTRI</div>
+    <h1>SECTION 93</h1><p>Seine-Saint-Denis</p>
+    <div class="hdr-clock">
+      <div class="hdr-time" id="clock">--:--:--</div>
+      <div class="hdr-date" id="dateblock">--</div>
+    </div>
+  </div>
+  <div class="menu">
+    <div class="mlbl">Syndicat</div>
+    <div class="mc red" onclick="go('actualites')"><div class="ico" style="background:rgba(183,28,28,.25)">&#128240;</div><div class="txt"><h3>Actualit&#233;s</h3><p>Informations syndicales</p></div><div class="arr">&#8250;</div></div>
+    <div class="mc blue" onclick="go('reunion')"><div class="ico" style="background:rgba(21,101,192,.25)">&#128196;</div><div class="txt"><h3>Fiche r&#233;union CE</h3><p>Remplir et envoyer par mail</p></div><div class="arr">&#8250;</div></div>
+    <div class="mc blue" onclick="go('calendrier')"><div class="ico" style="background:rgba(21,101,192,.25)">&#128197;</div><div class="txt"><h3>Calendrier CE 2026</h3><p>Second mercredi du mois</p></div><div class="arr">&#8250;</div></div>
+    <div class="mc orange" onclick="go('mobilisations')"><div class="ico" style="background:rgba(230,81,0,.25)">&#9994;</div><div class="txt"><h3>Mobilisations</h3><p>Actions et manifestations</p></div><div class="arr">&#8250;</div></div>
+    <div class="mlbl">Adh&#233;rents</div>
+    <div class="mc purple" onclick="go('adherents')"><div class="ico" style="background:rgba(106,27,154,.25)">&#128101;</div><div class="txt"><h3>Adh&#233;rents</h3><p>Liste des 19 membres</p></div><div class="arr">&#8250;</div></div>
+    <div class="mlbl">Finances</div>
+    <div class="mc green" onclick="go('suivi_cotis')"><div class="ico" style="background:rgba(46,125,50,.25)">&#128200;</div><div class="txt"><h3>Suivi cotisations</h3><p>Paiements 2026 par adh&#233;rent</p></div><div class="arr">&#8250;</div></div>
+    <div class="mc brown" onclick="go('budget')"><div class="ico" style="background:rgba(78,52,46,.4)">&#128184;</div><div class="txt"><h3>Budget section</h3><p>Recettes, d&#233;penses, solde</p></div><div class="arr">&#8250;</div></div>
+    <div class="mlbl">Communication</div>
+    <div class="mc orange" onclick="go('tracts')"><div class="ico" style="background:rgba(230,81,0,.25)">&#128221;</div><div class="txt"><h3>G&#233;n&#233;rateur de tracts</h3><p>Cr&#233;er et imprimer</p></div><div class="arr">&#8250;</div></div>
+    <div class="mc cyan" onclick="go('courriers')"><div class="ico" style="background:rgba(0,131,143,.25)">&#128140;</div><div class="txt"><h3>Courriers types</h3><p>6 mod&#232;les pr&#234;ts &#224; l&#8217;emploi</p></div><div class="arr">&#8250;</div></div>
+    <div class="mlbl">Terrain</div>
+    <div class="mc red" onclick="go('signalements')"><div class="ico" style="background:rgba(183,28,28,.25)">&#9888;&#65039;</div><div class="txt"><h3>Signalements</h3><p>Fiches conditions de travail</p></div><div class="arr">&#8250;</div></div>
+    <div class="mc blue" onclick="go('agenda')"><div class="ico" style="background:rgba(21,101,192,.25)">&#128197;</div><div class="txt"><h3>Agenda section</h3><p>R&#233;unions, permanences, dates</p></div><div class="arr">&#8250;</div></div>
+    <div class="mc lime" onclick="go('elections')"><div class="ico" style="background:rgba(85,139,47,.25)">&#128499;</div><div class="txt"><h3>&#201;lections d&#233;c. 2026</h3><p>Compte &#224; rebours et pr&#233;paration</p></div><div class="arr">&#8250;</div></div>
+    <div class="mc purple" onclick="go('simulateur')"><div class="ico" style="background:rgba(106,27,154,.25)">&#129518;</div><div class="txt"><h3>Simulateur de paie</h3><p>Net/brut, primes, cotisations</p></div><div class="arr">&#8250;</div></div>
+    <div class="mlbl">Adh&#233;sion</div>
+    <div class="mc green" onclick="go('cotisations')"><div class="ico" style="background:rgba(46,125,50,.25)">&#128182;</div><div class="txt"><h3>Cotisations 2024</h3><p>Bar&#232;mes par corps</p></div><div class="arr">&#8250;</div></div>
+    <div class="mc red" onclick="go('adhesion')"><div class="ico" style="background:rgba(183,28,28,.25)">&#128221;</div><div class="txt"><h3>Bulletin d&#8217;adh&#233;sion</h3><p>Formulaire + calendrier ann&#233;e</p></div><div class="arr">&#8250;</div></div>
+    <div class="mc purple" onclick="go('recu')"><div class="ico" style="background:rgba(106,27,154,.25)">&#129518;</div><div class="txt"><h3>Re&#231;u Fiscal</h3><p>Art. 4 bis &#8212; d&#233;duction 66%</p></div><div class="arr">&#8250;</div></div>
+    <div class="mlbl">Contact</div>
+    <div class="mc teal" onclick="go('contact')"><div class="ico" style="background:rgba(0,105,92,.25)">&#128222;</div><div class="txt"><h3>Contact</h3><p>Bureau de section</p></div><div class="arr">&#8250;</div></div>
+  </div>
+</div>
+
+<!-- METEO -->
+<div class="wb"><div class="wc" style="background:linear-gradient(135deg,#091828,#0d2240)">
+  <div class="wh">
+    <div class="wht">&#128205; Saint-Denis 93200</div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <span id="Mmaj" style="font-size:10px;color:rgba(255,255,255,.3)"></span>
+      <button class="mbtn" id="Mbtn" onclick="Mfetch(true)">&#128260; Actualiser</button>
+    </div>
+  </div>
+  <div id="Mbody"><div class="mmsg">Chargement...</div></div>
+</div></div>
+
+<!-- ANIMATION -->
+<div class="aw"><div class="ab"><canvas id="gcv"></canvas></div></div>
+
+<!-- PAYE -->
+<div class="wb"><div class="wc">
+  <div class="wh"><div class="wht">&#128176; Prochaine paye</div><span id="Ppct" style="font-size:10px;color:rgba(255,255,255,.3)"></span></div>
+  <div class="pb">
+    <div class="pi">&#128179;</div>
+    <div class="pf"><div class="pd" id="Pdate">---</div><div class="pl" id="Plbl">---</div></div>
+    <div><div class="pn" id="Pn">--</div><div class="pnl">jours</div></div>
+  </div>
+  <div class="pbar"><div class="pbarf" id="Pbar" style="width:0%"></div></div>
+</div></div>
+
+<!-- FERIES -->
+<div class="wb"><div class="wc">
+  <div class="wh"><div class="wht">&#128197; Jours f&#233;ri&#233;s 2026</div></div>
+  <div id="Flist"></div>
+</div></div>
+
+<!-- STATS -->
+<div class="wb"><div class="wc">
+  <div class="wh"><div class="wht">&#128101; Adh&#233;rents Section Nord 93</div></div>
+  <div id="Slist"></div>
+</div></div>
+
+<!-- COTISATION -->
+<div class="wb"><div class="wc">
+  <div class="wh"><div class="wht">&#129518; Cotisation rapide</div></div>
+  <div class="crp">
+    <div class="crl">Salaire brut mensuel (&#8364;)</div>
+    <input class="cri" type="number" id="CRbrut" placeholder="Ex: 2244.78" step="0.01" oninput="CRcalc(0)">
+    <div class="crl">ou Indice major&#233;</div>
+    <input class="cri" type="number" id="CRidx" placeholder="Ex: 456" oninput="CRcalc(1)">
+    <div class="crr" id="CRres">
+      <div class="crrv" id="CRm">--</div>
+      <div class="crra">Annuel&#160;: <b id="CRa">--</b></div>
+      <div style="font-size:10px;color:rgba(255,255,255,.3);margin-top:6px">Taux 1% &#8212; Point indice 4,92748&#8364; &#8212; SNPTRI CGT 2024</div>
+    </div>
+  </div>
+</div></div>
+
+<!-- NUMEROS -->
+<div class="wb"><div class="wc">
+  <div class="wh"><div class="wht">&#128222; Num&#233;ros utiles</div></div>
+  <div class="nsec">URGENCES</div>
+  <a class="nit" href="tel:15"><div class="nico" style="background:#c62828">&#128657;</div><div><div class="nnom">SAMU</div><div class="ndesc">Urgences m&#233;dicales</div></div><div class="ntel">15</div></a>
+  <a class="nit" href="tel:17"><div class="nico" style="background:#1565c0">&#128659;</div><div><div class="nnom">Police / Gendarmerie</div><div class="ndesc">Urgences s&#233;curit&#233;</div></div><div class="ntel">17</div></a>
+  <a class="nit" href="tel:18"><div class="nico" style="background:#e65100">&#128658;</div><div><div class="nnom">Pompiers</div><div class="ndesc">Incendie / secours</div></div><div class="ntel">18</div></a>
+  <a class="nit" href="tel:112"><div class="nico" style="background:#6a1b9a">&#128681;</div><div><div class="nnom">Urgence europ&#233;enne</div><div class="ndesc">Depuis mobile</div></div><div class="ntel">112</div></a>
+  <a class="nit" href="tel:3114"><div class="nico" style="background:#00695c">&#128138;</div><div><div class="nnom">Pr&#233;vention suicide</div><div class="ndesc">24h/24 &#8212; Gratuit</div></div><div class="ntel">3114</div></a>
+  <div class="nsec">SYNDICAT CGT SNPTRI</div>
+  <a class="nit" href="tel:+33145893370"><div class="nico" style="background:#b71c1c">&#127963;</div><div><div class="nnom">Si&#232;ge SNPTRI Paris</div><div class="ndesc">74 bis rue Hall&#233; 75014</div></div><div class="ntel">01&#160;45&#160;89&#160;33&#160;70</div></a>
+  <a class="nit" href="tel:+33601591670"><div class="nico" style="background:#c62828">&#128100;</div><div><div class="nnom">Amar BENMANSOUR</div><div class="ndesc">Responsable Section Nord 93</div></div><div class="ntel">06&#160;01&#160;59&#160;16&#160;70</div></a>
+  <div class="nsec">SANT&#201; &amp; SERVICES</div>
+  <a class="nit" href="tel:3646"><div class="nico" style="background:#00838f">&#127973;</div><div><div class="nnom">Assurance Maladie</div><div class="ndesc">Ameli &#8212; CPAM</div></div><div class="ntel">3646</div></a>
+  <a class="nit" href="tel:3966"><div class="nico" style="background:#2e7d32">&#128138;</div><div><div class="nnom">SOS M&#233;decins</div><div class="ndesc">M&#233;decin de garde</div></div><div class="ntel">3966</div></a>
+  <a class="nit" href="tel:3939"><div class="nico" style="background:#0d47a1">&#127981;</div><div><div class="nnom">Service-Public.fr</div><div class="ndesc">Renseignements admin.</div></div><div class="ntel">3939</div></a>
+  <a class="nit" href="tel:3949"><div class="nico" style="background:#004d40">&#128188;</div><div><div class="nnom">France Travail</div><div class="ndesc">Allocations ch&#244;mage</div></div><div class="ntel">3949</div></a>
+  <a class="nit" href="tel:+33153716000"><div class="nico" style="background:#1a237e">&#127963;</div><div><div class="nnom">DIRIF &#8212; Standard</div><div class="ndesc">Direction Routes IDF</div></div><div class="ntel">01&#160;53&#160;71&#160;60&#160;00</div></a>
+</div></div>
+
+<!-- LIENS -->
+<div class="wb" style="margin-bottom:0"><div class="wc">
+  <div class="wh"><div class="wht">&#128279; Liens utiles</div></div>
+  <div class="nsec">SYNDICAT</div>
+  <a class="lit" href="https://www.snptri-cgt.fr" target="_blank"><div class="lico">&#127760;</div><div><div class="lnom">SNPTRI-CGT</div><div class="ldesc">www.snptri-cgt.fr</div></div><div class="larr">&#8250;</div></a>
+  <a class="lit" href="https://www.cgt.fr" target="_blank"><div class="lico">&#9994;</div><div><div class="lnom">CGT nationale</div><div class="ldesc">www.cgt.fr</div></div><div class="larr">&#8250;</div></a>
+  <div class="nsec">RH &amp; PAYE</div>
+  <a class="lit" href="https://ensap.gouv.fr" target="_blank"><div class="lico">&#128176;</div><div><div class="lnom">ENSAP &#8212; Bulletins de paye</div><div class="ldesc">ensap.gouv.fr</div></div><div class="larr">&#8250;</div></a>
+  <a class="lit" href="https://www.retraites.gouv.fr" target="_blank"><div class="lico">&#129490;</div><div><div class="lnom">Retraites FP</div><div class="ldesc">retraites.gouv.fr</div></div><div class="larr">&#8250;</div></a>
+  <a class="lit" href="https://www.fonction-publique.gouv.fr" target="_blank"><div class="lico">&#127963;</div><div><div class="lnom">Fonction publique</div><div class="ldesc">fonction-publique.gouv.fr</div></div><div class="larr">&#8250;</div></a>
+  <div class="nsec">TERRAIN</div>
+  <a class="lit" href="https://bison-fute.gouv.fr" target="_blank"><div class="lico">&#128663;</div><div><div class="lnom">Bison Fut&#233;</div><div class="ldesc">Trafic routes France</div></div><div class="larr">&#8250;</div></a>
+  <a class="lit" href="https://www.sytadin.fr" target="_blank"><div class="lico">&#128739;</div><div><div class="lnom">Sytadin</div><div class="ldesc">Trafic IDF temps r&#233;el</div></div><div class="larr">&#8250;</div></a>
+  <a class="lit" href="https://www.inrs.fr" target="_blank"><div class="lico">&#9939;</div><div><div class="lnom">INRS &#8212; S&#233;curit&#233; travail</div><div class="ldesc">Prevention risques pro.</div></div><div class="larr">&#8250;</div></a>
+</div></div>
+
+
+<div class="pg" id="p-actualites">
+  <div class="hdr" style="padding-top:44px"><h1>ACTUALIT&#201;S</h1><p>Informations syndicales</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Actualit&#233;s</div></div>
+  <div class="aw">
+    <div id="actu-list"></div>
+    <div style="text-align:center;padding:20px;color:var(--t4);font-size:13px;display:none" id="actu-empty">Aucune actualit&#233;. Ajoutez la premi&#232;re ci-dessous.</div>
+    <div class="rcard" style="margin-top:10px">
+      <div class="rch"><h3>Ajouter une actualit&#233;</h3></div>
+      <div class="rf">
+        <div class="fr2">
+          <div class="fr"><label>Date *</label><input type="date" id="ac-date"></div>
+          <div class="fr"><label>Cat&#233;gorie</label>
+            <select id="ac-tag">
+              <option value="INFO">INFO</option>
+              <option value="GR&#200;VE">GR&#200;VE</option>
+              <option value="N&#201;GOCIATION">N&#201;GOCIATION</option>
+              <option value="AG">AG</option>
+              <option value="ALERTE">ALERTE</option>
+              <option value="VICTOIRE">VICTOIRE</option>
+            </select>
+          </div>
+        </div>
+        <div class="fr"><label>Titre *</label><input type="text" id="ac-titre" placeholder="Intitul&#233; de l&#8217;actualit&#233;"></div>
+        <div class="fr"><label>Contenu</label><textarea id="ac-body" rows="4" style="width:100%;background:var(--bg3);border:1px solid var(--bg4);border-radius:9px;color:var(--t);font-size:14px;padding:12px;outline:none;font-family:var(--fb);resize:none;line-height:1.7" placeholder="D&#233;tails de l&#8217;actualit&#233;..."></textarea></div>
+        <button class="gbtn" onclick="addActu()">Publier</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pg" id="p-calendrier">
+  <div class="hdr" style="padding-top:44px"><h1>CALENDRIER CE</h1><p>Second mercredi du mois &#8212; 2026</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Calendrier CE 2026</div></div>
+  <div class="klw">
+    <div class="kleg">R&#233;unions de CE le <strong>second mercredi</strong> de chaque mois.<br>Mois actifs : <strong>Mars &#183; Avril &#183; Mai &#183; Juin &#183; Sept. &#183; Oct. &#183; Nov. &#183; D&#233;c.</strong></div>
+    <div class="kb"><div class="kbh"><span class="kn">JANVIER</span><span class="kbadge off">Pas de r&#233;union</span></div><div class="kno">Pas de r&#233;union CE en janvier</div></div>
+    <div class="kb"><div class="kbh"><span class="kn">F&#201;VRIER</span><span class="kbadge off">Pas de r&#233;union</span></div><div class="kno">Pas de r&#233;union CE en f&#233;vrier</div></div>
+    <div class="kb"><div class="kbh"><span class="kn">MARS</span><span class="kbadge">R&#233;union CE</span></div><div class="kr"><div class="kd"><div class="kdd">11</div><div class="kdj">Mer.</div></div><div><div class="kit">R&#233;union de CE</div><div class="kis">Mercredi 11 mars 2026</div></div></div></div>
+    <div class="kb"><div class="kbh"><span class="kn">AVRIL</span><span class="kbadge">R&#233;union CE</span></div><div class="kr"><div class="kd"><div class="kdd">08</div><div class="kdj">Mer.</div></div><div><div class="kit">R&#233;union de CE</div><div class="kis">Mercredi 8 avril 2026</div></div></div></div>
+    <div class="kb"><div class="kbh"><span class="kn">MAI</span><span class="kbadge">R&#233;union CE</span></div><div class="kr"><div class="kd"><div class="kdd">13</div><div class="kdj">Mer.</div></div><div><div class="kit">R&#233;union de CE</div><div class="kis">Mercredi 13 mai 2026</div></div></div></div>
+    <div class="kb"><div class="kbh"><span class="kn">JUIN</span><span class="kbadge">R&#233;union CE</span></div><div class="kr"><div class="kd"><div class="kdd">10</div><div class="kdj">Mer.</div></div><div><div class="kit">R&#233;union de CE</div><div class="kis">Mercredi 10 juin 2026</div></div></div></div>
+    <div class="kb"><div class="kbh"><span class="kn">JUILLET</span><span class="kbadge off">Pas de r&#233;union</span></div><div class="kno">Pas de r&#233;union CE en juillet</div></div>
+    <div class="kb"><div class="kbh"><span class="kn">AO&#219;T</span><span class="kbadge off">Pas de r&#233;union</span></div><div class="kno">Pas de r&#233;union CE en ao&#251;t</div></div>
+    <div class="kb"><div class="kbh"><span class="kn">SEPTEMBRE</span><span class="kbadge">R&#233;union CE</span></div><div class="kr"><div class="kd"><div class="kdd">09</div><div class="kdj">Mer.</div></div><div><div class="kit">R&#233;union de CE</div><div class="kis">Mercredi 9 septembre 2026</div></div></div></div>
+    <div class="kb"><div class="kbh"><span class="kn">OCTOBRE</span><span class="kbadge">R&#233;union CE</span></div><div class="kr"><div class="kd"><div class="kdd">14</div><div class="kdj">Mer.</div></div><div><div class="kit">R&#233;union de CE</div><div class="kis">Mercredi 14 octobre 2026</div></div></div></div>
+    <div class="kb"><div class="kbh"><span class="kn">NOVEMBRE</span><span class="kbadge">R&#233;union CE</span></div><div class="kr"><div class="kd"><div class="kdd">11</div><div class="kdj">Mer.</div></div><div><div class="kit">R&#233;union de CE</div><div class="kis">Mercredi 11 novembre 2026</div></div></div></div>
+    <div class="kb"><div class="kbh"><span class="kn">D&#201;CEMBRE</span><span class="kbadge">R&#233;union CE</span></div><div class="kr"><div class="kd"><div class="kdd">09</div><div class="kdj">Mer.</div></div><div><div class="kit">R&#233;union de CE</div><div class="kis">Mercredi 9 d&#233;cembre 2026</div></div></div></div>
+  </div>
+</div>
+
+<div class="pg" id="p-cotisations">
+  <div class="hdr" style="padding-top:44px"><h1>COTISATIONS 2024</h1><p>Taux 1% du salaire brut mensuel</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Cotisations 2024</div></div>
+  <div class="cow">
+    <div class="corp"><div class="coh"><div class="cc">C1 / C2</div><div class="cn">Agents d&#8217;Exploitation / Agents Techniques</div></div>
+    <table class="ctb"><tr><th>&#201;ch.</th><th>Brut</th><th>Major&#233;</th><th>Trait./mois</th><th>Cotis./mois</th><th>Cotis./an</th></tr>
+    <tr><td>1er</td><td>368</td><td>340</td><td>1674,00</td><td class="hl">16,74&#8364;</td><td class="gr">200,88&#8364;</td></tr>
+    <tr><td>3e</td><td>373</td><td>344</td><td>1693,69</td><td class="hl">16,94&#8364;</td><td class="gr">203,24&#8364;</td></tr>
+    <tr><td>5e</td><td>393</td><td>360</td><td>1772,39</td><td class="hl">17,72&#8364;</td><td class="gr">212,69&#8364;</td></tr>
+    <tr><td>7e</td><td>432</td><td>388</td><td>1909,84</td><td class="hl">19,10&#8364;</td><td class="gr">229,18&#8364;</td></tr>
+    <tr><td>9e</td><td>467</td><td>408</td><td>2008,49</td><td class="hl">20,08&#8364;</td><td class="gr">241,02&#8364;</td></tr>
+    <tr><td>11e</td><td>514</td><td>443</td><td>2180,79</td><td class="hl">21,81&#8364;</td><td class="gr">261,69&#8364;</td></tr>
+    </table><div class="cnot">Taux 1% du salaire brut mensuel</div></div>
+    <div class="corp"><div class="coh"><div class="cc">C3 / OPA</div><div class="cn">Agents de Ma&#238;trise / Ouvriers Professionnels</div></div>
+    <table class="ctb"><tr><th>&#201;ch.</th><th>Brut</th><th>Major&#233;</th><th>Trait./mois</th><th>Cotis./mois</th><th>Cotis./an</th></tr>
+    <tr><td>1er</td><td>390</td><td>356</td><td>1752,62</td><td class="hl">17,53&#8364;</td><td class="gr">210,31&#8364;</td></tr>
+    <tr><td>3e</td><td>423</td><td>376</td><td>1850,96</td><td class="hl">18,51&#8364;</td><td class="gr">222,12&#8364;</td></tr>
+    <tr><td>5e</td><td>455</td><td>398</td><td>1959,26</td><td class="hl">19,59&#8364;</td><td class="gr">235,11&#8364;</td></tr>
+    <tr><td>7e</td><td>486</td><td>420</td><td>2067,56</td><td class="hl">20,68&#8364;</td><td class="gr">248,11&#8364;</td></tr>
+    <tr><td>10e</td><td>565</td><td>478</td><td>2353,08</td><td class="hl">23,53&#8364;</td><td class="gr">282,37&#8364;</td></tr>
+    </table><div class="cnot">Taux 1% du salaire brut mensuel</div></div>
+    <div class="corp"><div class="coh"><div class="cc">CEED</div><div class="cn">Chefs d&#8217;&#201;quipe d&#8217;Exploitation Divisionnaires</div></div>
+    <table class="ctb"><tr><th>&#201;ch.</th><th>Brut</th><th>Major&#233;</th><th>Trait./mois</th><th>Cotis./mois</th><th>Cotis./an</th></tr>
+    <tr><td>1er</td><td>446</td><td>397</td><td>1954,34</td><td class="hl">19,54&#8364;</td><td class="gr">234,52&#8364;</td></tr>
+    <tr><td>3e</td><td>492</td><td>430</td><td>2116,79</td><td class="hl">21,17&#8364;</td><td class="gr">254,01&#8364;</td></tr>
+    <tr><td>5e</td><td>526</td><td>456</td><td>2244,78</td><td class="hl">22,45&#8364;</td><td class="gr">269,37&#8364;</td></tr>
+    <tr><td>7e</td><td>597</td><td>508</td><td>2500,77</td><td class="hl">25,01&#8364;</td><td class="gr">300,09&#8364;</td></tr>
+    </table><div class="cnot">Taux 1% du salaire brut mensuel</div></div>
+    <div class="corp"><div class="coh"><div class="cc">B1 / B2 / B3</div><div class="cn">Techniciens Sup&#233;rieurs du D&#233;veloppement Durable</div></div>
+    <table class="ctb"><tr><th>&#201;ch.</th><th>Brut</th><th>Major&#233;</th><th>Trait./mois</th><th>Cotis./mois</th><th>Cotis./an</th></tr>
+    <tr><td>1er</td><td>420</td><td>373</td><td>1836,19</td><td class="hl">18,36&#8364;</td><td class="gr">220,34&#8364;</td></tr>
+    <tr><td>5e</td><td>425</td><td>377</td><td>1855,88</td><td class="hl">18,56&#8364;</td><td class="gr">222,71&#8364;</td></tr>
+    <tr><td>8e</td><td>486</td><td>420</td><td>2067,56</td><td class="hl">20,68&#8364;</td><td class="gr">248,11&#8364;</td></tr>
+    <tr><td>11e</td><td>606</td><td>509</td><td>2505,69</td><td class="hl">25,06&#8364;</td><td class="gr">300,68&#8364;</td></tr>
+    <tr><td>12e</td><td>645</td><td>539</td><td>2653,37</td><td class="hl">26,53&#8364;</td><td class="gr">318,40&#8364;</td></tr>
+    </table><div class="cnot">Taux 1% du salaire brut mensuel</div></div>
+  </div>
+</div>
+
+<div class="pg" id="p-adhesion">
+  <div class="hdr" style="padding-top:44px"><h1>BULLETIN D&#8217;ADH&#201;SION</h1><p>CGT SNPTRI &#8212; Seine-Saint-Denis</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Bulletin d&#8217;adh&#233;sion</div></div>
+  <div class="rw">
+    <div class="rcard">
+      <div class="rch"><h3>Identit&#233;</h3><p>Informations personnelles</p></div>
+      <div class="rf">
+        <div class="fr2"><div class="fr"><label>Nom *</label><input type="text" id="an-nom" placeholder="DUPONT"></div><div class="fr"><label>Pr&#233;nom *</label><input type="text" id="an-pre" placeholder="Jean"></div></div>
+        <div class="fr2"><div class="fr"><label>Civilit&#233;</label><select id="an-sex"><option value="">&#8212;</option><option value="M.">M.</option><option value="Mme">Mme</option></select></div><div class="fr"><label>Date de naissance</label><input type="date" id="an-ddn"></div></div>
+        <div class="fr"><label>Adresse</label><input type="text" id="an-adr" placeholder="N&#176; et nom de voie"></div>
+        <div class="fr2"><div class="fr"><label>Code postal</label><input type="text" id="an-cp" placeholder="93110" maxlength="5"></div><div class="fr"><label>Ville</label><input type="text" id="an-vil" placeholder="Rosny-sous-Bois"></div></div>
+        <div class="fr"><label>T&#233;l&#233;phone</label><input type="tel" id="an-tel" placeholder="06 00 00 00 00"></div>
+        <div class="fr"><label>Email</label><input type="text" id="an-mail" placeholder="votre adresse mail"></div>
+      </div>
+    </div>
+    <div class="rcard">
+      <div class="rch"><h3>Situation professionnelle</h3><p>Corps, grade, r&#233;mun&#233;ration</p></div>
+      <div class="rf">
+        <div class="fr"><label>Employeur / Service</label><input type="text" id="an-emp" placeholder="DIRIF &#8212; AGER NORD &#8212; CEI Rosny"></div>
+        <div class="fr2"><div class="fr"><label>Corps / Grade</label><input type="text" id="an-cor" placeholder="Ex: C3"></div><div class="fr"><label>&#201;chelon</label><input type="text" id="an-ech" placeholder="Ex: 5e"></div></div>
+        <div class="fr2"><div class="fr"><label>Indice brut</label><input type="text" id="an-ind" placeholder="Ex: 455"></div>
+          <div class="fr"><label>Ann&#233;e d&#8217;adh&#233;sion</label>
+            <select id="an-yr" onchange="onYearChange()">
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026" selected>2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+            </select>
+          </div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;border:1px solid var(--bg4);overflow:hidden;margin-bottom:13px">
+          <div style="background:linear-gradient(135deg,var(--r2),var(--r));padding:8px 14px;display:flex;align-items:center;gap:6px">
+            <span style="font-family:var(--fh);font-size:14px;font-weight:800;color:#fff">&#128198; Calendrier <span id="cal-titre">2026</span></span>
+            <span style="color:rgba(255,255,255,.5);font-size:10px">&#8212; CE en bleu, modifiable</span>
+          </div>
+          <div style="padding:8px 10px"><div id="cal-grid" style="display:flex;flex-direction:column;gap:6px"></div></div>
+        </div>
+        <div class="fr2"><div class="fr"><label>Traitement mensuel &#8364;</label><input type="number" id="an-sal" placeholder="1959.26" step="0.01" oninput="calcCot()"></div><div class="fr"><label>Cotisation / mois</label><input type="text" id="an-cot" placeholder="Auto" readonly style="color:#81c784;font-weight:700"></div></div>
+        <div class="fr2"><div class="fr"><label>N&#176; de carte</label><input type="text" id="an-carte" placeholder="Attribu&#233; section"></div><div class="fr"><label>Date de signature</label><input type="date" id="an-date"></div></div>
+        <button class="gbtn" onclick="genAdhesion()">G&#233;n&#233;rer le bulletin</button>
+      </div>
+    </div>
+
+    <div class="prev" id="prev-adh">
+      <div class="ph"><h2>BULLETIN D&#8217;ADH&#201;SION</h2><p>CGT SNPTRI &#8212; Section Seine-Saint-Denis</p><p style="font-size:11px;color:#888;margin-top:3px">74 bis rue Hall&#233; &#8212; 75014 PARIS &#8212; 01.45.89.33.70</p></div>
+      <div style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:1px;margin:12px 0 6px">Identit&#233;</div>
+      <div id="adh-id"></div>
+      <div style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:1px;margin:14px 0 6px">Situation professionnelle</div>
+      <div id="adh-pro"></div>
+      <div class="pm" style="margin-top:16px"><div class="pml">Cotisation mensuelle (1% du traitement brut)</div><div class="pmv" id="adh-cotval">&#8212;</div></div>
+      <div id="adh-ann" style="text-align:center;font-size:12px;color:#81c784;margin-top:-8px;margin-bottom:14px"></div>
+      <div style="font-size:11px;color:#999;font-style:italic;border-top:1px solid #222;padding-top:12px;line-height:1.75;text-align:center">Je soussign&#233;(e) demande mon adh&#233;sion &#224; la CGT SNPTRI. Je m&#8217;engage &#224; respecter les statuts et &#224; verser ma cotisation. Les cotisations ouvrent droit &#224; un cr&#233;dit d&#8217;imp&#244;t de <b style="color:#d4a843">66%</b> du montant vers&#233;.</div>
+      <div style="margin-top:18px;display:flex;justify-content:space-between;font-size:12px;color:#666">
+        <div>Fait le : <span id="adh-sigdate">________________</span><br><br>Signature :<br><br><br>________________</div>
+        <div style="text-align:right">Le Responsable :<br><br><br>________________<br><br><span style="font-size:11px">Amar BENMANSOUR</span></div>
+      </div>
+      <div class="abr" style="margin-top:14px"><button class="btn-cp" onclick="copierAdh()">Copier texte</button><button class="btn-pr" onclick="window.print()">&#128424; Imprimer</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="pg" id="p-recu">
+  <div class="hdr" style="padding-top:44px"><h1>RE&#199;U FISCAL</h1><p>Art. 4 bis du Code du Travail</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Re&#231;u Fiscal</div></div>
+  <div class="rw">
+    <div class="rcard">
+      <div class="rch"><h3>Informations du membre</h3><p>Remplissez pour g&#233;n&#233;rer le re&#231;u</p></div>
+      <div class="rf">
+        <div class="fr2"><div class="fr"><label>Nom *</label><input type="text" id="rn" placeholder="DUPONT"></div><div class="fr"><label>Pr&#233;nom *</label><input type="text" id="rp" placeholder="Jean"></div></div>
+        <div class="fr"><label>Adresse</label><input type="text" id="ra" placeholder="74 bis rue Hall&#233;, 75014 Paris"></div>
+        <div class="fr2"><div class="fr"><label>Corps / Grade</label><input type="text" id="rg" placeholder="Ex: B1 &#8212; 6&#232;me"></div><div class="fr"><label>N&#176; de carte</label><input type="text" id="rc" placeholder="27083"></div></div>
+        <div class="fr2"><div class="fr"><label>Ann&#233;e *</label><select id="ry"><option value="2024">2024</option><option value="2025">2025</option><option value="2026" selected>2026</option></select></div><div class="fr"><label>Montant total &#8364; *</label><input type="number" id="rm" placeholder="222.12" step="0.01"></div></div>
+        <div class="fr"><label>Date de d&#233;livrance</label><input type="date" id="rd"></div>
+        <button class="gbtn" onclick="genRecu()">G&#233;n&#233;rer le re&#231;u fiscal</button>
+      </div>
+    </div>
+    <div class="prev" id="prev-recu">
+      <div class="ph"><h2>RE&#199;U FISCAL</h2><p>CGT SNPTRI &#8212; Seine-Saint-Denis</p><p style="font-size:11px;color:#888;margin-top:3px">74 bis rue Hall&#233; &#8212; 75014 PARIS &#8212; 01.45.89.33.70</p></div>
+      <div id="pb1"></div>
+      <div class="pm"><div class="pml">Montant total des cotisations vers&#233;es</div><div class="pmv" id="pmv">&#8212;</div></div>
+      <div id="pb2"></div>
+      <div class="psig"><div>Le titulaire<br><br><br>________________</div><div style="text-align:right">Le Responsable CGT 93<br><br><br>________________</div></div>
+      <div class="pft">Ce re&#231;u est d&#233;livr&#233; conform&#233;ment &#224; l&#8217;article 4 bis du Code du Travail. Les cotisations syndicales ouvrent droit &#224; un cr&#233;dit d&#8217;imp&#244;t de 66% du montant, dans la limite de 1% du revenu brut imposable.</div>
+      <div class="abr"><button class="btn-cp" onclick="copierRecu()">Copier texte</button><button class="btn-pr" onclick="window.print()">&#128424; Imprimer</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="pg" id="p-mobilisations">
+  <div class="hdr" style="padding-top:44px"><h1>MOBILISATIONS</h1><p>Actions et manifestations</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Mobilisations</div></div>
+  <div class="mw">
+    <div class="mo"><div class="mt"><div class="db"><div class="dj">12</div><div class="dm">Mars</div></div><div><div class="mn">Gr&#232;ve nationale &#8212; Transports</div><div class="ml">Direction r&#233;gionale, Saint-Denis</div></div></div><div class="mb">Rassemblement &#224; 10h00. Banderoles fournies. Covoiturage possible depuis Rosny.</div></div>
+    <div class="mo"><div class="mt"><div class="db"><div class="dj">25</div><div class="dm">Mars</div></div><div><div class="mn">Manifestation nationale</div><div class="ml">Place de la R&#233;publique, Paris</div></div></div><div class="mb">D&#233;part cort&#232;ge CGT &#224; 14h00. Transport depuis Bobigny.</div></div>
+    <div class="mo"><div class="mt"><div class="db"><div class="dj">08</div><div class="dm">Avr</div></div><div><div class="mn">Assembl&#233;e G&#233;n&#233;rale de section</div><div class="ml">Salle syndicale, Aubervilliers</div></div></div><div class="mb">AG ouverte &#224; tous. Bilan, vote des motions. 18h30.</div></div>
+  </div>
+</div>
+
+<div class="pg" id="p-contact">
+  <div class="hdr" style="padding-top:44px"><h1>CONTACT</h1><p>Bureau de section CGT SNPTRI 93</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Contact</div></div>
+  <div class="cw">
+    <div class="rb"><div class="rl">Responsable de section 93</div><div class="nm">Amar BENMANSOUR</div></div>
+    <div class="ci"><div class="lb">T&#233;l&#233;phone</div><a href="tel:0601591670">06 01 59 16 70</a></div>
+    <div class="ci"><div class="lb">Email</div><span style="color:var(--t);font-size:14px;font-weight:600">amar.benmansour [at] developpement-durable.gouv.fr</span></div>
+    <div style="height:8px"></div>
+    <div class="rb"><div class="rl">Responsable adjoint de section</div><div class="nm">Olivier LEBEAU</div></div>
+    <div class="ci"><div class="lb">T&#233;l&#233;phone</div><a href="tel:0699805436">06 99 80 54 36</a></div>
+    <div class="ci"><div class="lb">Email</div><span style="color:var(--t);font-size:14px;font-weight:600">olivier.lebeau&#64;developpement-durable.gouv.fr</span></div>
+    <div style="height:8px"></div>
+    <div class="rb"><div class="rl">Tr&#233;sorier</div><div class="nm">David AMBROSI</div></div>
+    <div class="ci"><div class="lb">T&#233;l&#233;phone 1</div><a href="tel:0664482801">06 64 48 28 01</a></div>
+    <div class="ci"><div class="lb">T&#233;l&#233;phone 2</div><a href="tel:0672066488">06 72 06 64 88</a></div>
+    <div class="ci"><div class="lb">Email</div><span style="color:var(--t);font-size:14px;font-weight:600">david.ambrosi [at] developpement-durable.gouv.fr</span></div>
+    <div style="height:8px"></div>
+    <div class="ci"><div class="lb">Si&#232;ge national SNPTRI-CGT</div><a href="tel:0145893370">74 bis rue Hall&#233; &#8212; 75014 PARIS &#8212; 01 45 89 33 70</a></div>
+  </div>
+</div>
+
+
+<div class="pg" id="p-reunion">
+  <div class="hdr" style="padding-top:44px"><h1>FICHE R&#201;UNION CE</h1><p>Comit&#233; d&#8217;&#201;tablissement &#8212; SNPTRI CGT 93</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Fiche r&#233;union CE</div></div>
+  <div class="rw">
+
+    <div class="rcard">
+      <div class="rch"><h3>Informations de la r&#233;union</h3><p>Date, lieu, ordre du jour</p></div>
+      <div class="rf">
+        <div class="fr2">
+          <div class="fr"><label>Date de la r&#233;union *</label><input type="date" id="ce-date"></div>
+          <div class="fr"><label>Heure *</label><input type="time" id="ce-heure" value="09:00"></div>
+        </div>
+        <div class="fr"><label>Lieu</label><input type="text" id="ce-lieu" placeholder="Ex: Salle de r&#233;union &#8212; Direction r&#233;gionale"></div>
+        <div class="fr"><label>Pr&#233;sid&#233; par</label><input type="text" id="ce-pres" placeholder="Ex: Le Directeur R&#233;gional"></div>
+        <div class="fr"><label>Secr&#233;taire de s&#233;ance</label><input type="text" id="ce-sec" placeholder="Ex: Amar BENMANSOUR"></div>
+      </div>
+    </div>
+
+    <div class="rcard">
+      <div class="rch"><h3>Ordre du jour</h3><p>Points &#224; traiter &#8212; un par ligne</p></div>
+      <div class="rf">
+        <div class="fr"><label>Point 1 *</label><input type="text" id="odj1" placeholder="Ex: Approbation du PV de la r&#233;union pr&#233;c&#233;dente"></div>
+        <div class="fr"><label>Point 2</label><input type="text" id="odj2" placeholder="Ex: Point sur les effectifs et mouvements de personnel"></div>
+        <div class="fr"><label>Point 3</label><input type="text" id="odj3" placeholder="Ex: Conditions de travail &#8212; situations signalées"></div>
+        <div class="fr"><label>Point 4</label><input type="text" id="odj4" placeholder="Ex: Budget et &#233;quipements"></div>
+        <div class="fr"><label>Point 5</label><input type="text" id="odj5" placeholder="Ex: Questions diverses"></div>
+        <div class="fr"><label>Point 6 (optionnel)</label><input type="text" id="odj6" placeholder=""></div>
+      </div>
+    </div>
+
+    <div class="rcard">
+      <div class="rch"><h3>Destinataires</h3><p>Membres convoqués &#8212; un nom par ligne</p></div>
+      <div class="rf">
+        <div class="fr"><label>Membres titulaires / suppléants</label><textarea id="ce-dest" rows="5" placeholder="Ex:\nMartin DUPONT\nSophie LEBRUN\n..." style="width:100%;background:var(--bg3);border:1px solid var(--bg4);border-radius:9px;color:var(--t);font-size:14px;padding:12px 14px;outline:none;font-family:var(--fb);resize:none;line-height:1.7"></textarea></div>
+        <div class="fr"><label>Objet du mail (modifiable)</label><input type="text" id="ce-objet" value="Convocation &#8212; R&#233;union de CE SNPTRI 93"></div>
+      </div>
+    </div>
+
+    <div style="padding:0 0 4px">
+      <button class="gbtn" onclick="genReunion()" style="margin:0">G&#233;n&#233;rer la fiche</button>
+    </div>
+
+    <!-- APERCU -->
+    <div class="prev" id="prev-reunion">
+      <div class="ph">
+        <div style="font-size:11px;color:#888;margin-bottom:8px">DRIEA-IF / DIRIF / SEER &#8212; AGER NORD</div>
+        <h2>FICHE DE R&#201;UNION</h2>
+        <p>Comit&#233; d&#8217;&#201;tablissement &#8212; CGT SNPTRI 93</p>
+        <p style="font-size:11px;color:#888;margin-top:3px">74 bis rue Hall&#233; &#8212; 75014 PARIS</p>
+      </div>
+
+      <div id="reu-infos"></div>
+
+      <div style="margin:14px 0 6px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:1px">Ordre du jour</div>
+      <div id="reu-odj"></div>
+
+      <div style="margin:14px 0 6px;font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:1px">Membres convoqués</div>
+      <div id="reu-dest"></div>
+
+      <div style="margin-top:20px;font-size:11px;color:#999;font-style:italic;border-top:1px solid #222;padding-top:12px;line-height:1.75;text-align:center">
+        Conform&#233;ment &#224; l&#8217;article L2325-14 du Code du Travail, vous &#234;tes convoqu&#233;(e) &#224; la r&#233;union du Comit&#233; d&#8217;&#201;tablissement.<br>
+        L&#8217;ordre du jour est joint &#224; la pr&#233;sente convocation.
+      </div>
+
+      <div style="margin-top:18px;display:flex;justify-content:space-between;font-size:12px;color:#666">
+        <div>Fait le : <span id="reu-sigdate"></span><br><br>Le Secr&#233;taire du CE :<br><br><br>________________<br><br><span style="font-size:11px" id="reu-sec-nom"></span></div>
+        <div style="text-align:right">Le Responsable CGT 93 :<br><br><br>________________<br><br><span style="font-size:11px">Amar BENMANSOUR</span></div>
+      </div>
+
+      <div class="abr" style="margin-top:14px">
+        <button class="btn-cp" onclick="copierReunion()">Copier texte</button>
+        <button class="btn-pr" onclick="window.print()">&#128424; Imprimer</button>
+      </div>
+      <button onclick="envoyerMail()" style="width:100%;margin-top:8px;background:linear-gradient(135deg,#1565c0,#1976d2);color:#fff;border:none;border-radius:9px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--fh);letter-spacing:.5px">&#9993; Envoyer par mail</button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ADHERENTS -->
+<div class="pg" id="p-adherents">
+  <div class="hdr" style="padding-top:44px"><h1>ADH&Eacute;RENTS</h1><p>SNPTRI Section Nord &mdash; 2026</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Adh&eacute;rents</div></div>
+  <div class="aw">
+    <div class="adh-stats-row">
+      <div class="adh-stat-box"><div class="asn" id="adh-total">19</div><div class="asl">Total</div></div>
+      <div class="adh-stat-box"><div class="asn" id="adh-rosny">0</div><div class="asl">Rosny</div></div>
+      <div class="adh-stat-box"><div class="asn" id="adh-cotis-tot">0&euro;</div><div class="asl">Cotis/mois</div></div>
+    </div>
+    <div class="adh-search-wrap"><span style="color:var(--t4)">&#128269;</span><input type="text" id="adh-q" placeholder="Rechercher nom, grade, affectation..." oninput="filterAdh()"></div>
+    <div class="ftags">
+      <div class="ftag on" onclick="setFtag('tous',this)">Tous</div>
+      <div class="ftag" onclick="setFtag('rosny',this)">Rosny</div>
+      <div class="ftag" onclick="setFtag('prelevement',this)">Pr&eacute;l&egrave;vement</div>
+      <div class="ftag" onclick="setFtag('virement',this)">Virement</div>
+      <div class="ftag" onclick="setFtag('cheque',this)">Ch&egrave;que</div>
+    </div>
+    <div id="adh-list"></div>
+  </div>
+</div>
+
+<!-- SUIVI COTISATIONS -->
+<div class="pg" id="p-suivi_cotis">
+  <div class="hdr" style="padding-top:44px"><h1>SUIVI COTISATIONS</h1><p>Paiements 2026</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Suivi cotisations</div></div>
+  <div class="aw">
+    <div class="adh-stats-row">
+      <div class="adh-stat-box"><div class="asn" id="sc-ok">0</div><div class="asl">&Agrave; jour</div></div>
+      <div class="adh-stat-box"><div class="asn" id="sc-att" style="color:#f5a623">0</div><div class="asl">En attente</div></div>
+      <div class="adh-stat-box"><div class="asn" id="sc-tot" style="color:#81c784">0&euro;</div><div class="asl">Per&ccedil;u/mois</div></div>
+    </div>
+    <div style="background:var(--bg2);border:1px solid var(--bg4);border-radius:12px;overflow:hidden;">
+      <div style="background:var(--bg3);padding:9px 12px;display:grid;grid-template-columns:1fr 80px 90px 36px;border-bottom:1px solid var(--bg4);">
+        <div style="font-size:9px;color:var(--t4);font-family:var(--fh);letter-spacing:1px;text-transform:uppercase;">Adh&eacute;rent</div>
+        <div style="font-size:9px;color:var(--t4);font-family:var(--fh);letter-spacing:1px;text-transform:uppercase;text-align:center;">Montant</div>
+        <div style="font-size:9px;color:var(--t4);font-family:var(--fh);letter-spacing:1px;text-transform:uppercase;text-align:center;">Statut</div>
+        <div></div>
+      </div>
+      <div id="cotis-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- BUDGET -->
+<div class="pg" id="p-budget">
+  <div class="hdr" style="padding-top:44px"><h1>BUDGET SECTION</h1><p>Exercice 2026</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Budget section</div></div>
+  <div class="aw">
+    <div class="budget-total">
+      <div><div class="bt-label">Solde tr&eacute;sorerie</div><div class="bt-val" id="bud-solde">0,00 &euro;</div></div>
+      <div style="text-align:right">
+        <div class="bt-label">Recettes</div><div style="font-family:var(--fh);font-size:16px;color:#a5d6a7" id="bud-rec">0,00 &euro;</div>
+        <div class="bt-label" style="margin-top:4px">D&eacute;penses</div><div style="font-family:var(--fh);font-size:16px;color:#ef9a9a" id="bud-dep">0,00 &euro;</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+      <button class="gbtn" style="background:linear-gradient(135deg,var(--green),#388e3c);font-size:14px;padding:12px;" onclick="addBudgetLine('recette')">+ Recette</button>
+      <button class="gbtn" style="font-size:14px;padding:12px;" onclick="addBudgetLine('depense')">+ D&eacute;pense</button>
+    </div>
+    <div style="background:var(--bg2);border:1px solid var(--bg4);border-radius:12px;overflow:hidden;">
+      <div style="background:var(--bg3);padding:9px 12px;display:grid;grid-template-columns:1fr 90px 80px 36px;border-bottom:1px solid var(--bg4);">
+        <div style="font-size:9px;color:var(--t4);font-family:var(--fh);letter-spacing:1px;text-transform:uppercase;">Libell&eacute;</div>
+        <div style="font-size:9px;color:var(--t4);font-family:var(--fh);letter-spacing:1px;text-transform:uppercase;text-align:right;">Montant</div>
+        <div style="font-size:9px;color:var(--t4);font-family:var(--fh);letter-spacing:1px;text-transform:uppercase;text-align:center;">Type</div>
+        <div></div>
+      </div>
+      <div id="budget-list"></div>
+      <div id="budget-empty" style="padding:16px;text-align:center;font-size:12px;color:var(--t4);">Aucune op&eacute;ration</div>
+    </div>
+  </div>
+</div>
+
+<!-- TRACTS -->
+<div class="pg" id="p-tracts">
+  <div class="hdr" style="padding-top:44px"><h1>G&Eacute;N&Eacute;RATEUR DE TRACTS</h1><p>Cr&eacute;er, pr&eacute;visualiser, imprimer</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Tracts</div></div>
+  <div class="rw">
+    <div class="rcard">
+      <div class="rch"><h3>Contenu du tract</h3><p>Remplissez les champs</p></div>
+      <div class="rf">
+        <div class="fr"><label>Titre *</label><input type="text" id="tr-titre" placeholder="EX: GR&Egrave;VE DU 12 MARS 2026"></div>
+        <div class="fr"><label>Accroche</label><input type="text" id="tr-sous" placeholder="Sous-titre ou slogan d'appel"></div>
+        <div class="fr"><label>Date et lieu</label><input type="text" id="tr-date" placeholder="Ex: Mercredi 12 mars &mdash; 10h00, Bobigny"></div>
+        <div class="fr"><label>Corps du texte *</label><textarea id="tr-body" rows="6" style="width:100%;background:var(--bg3);border:1px solid var(--bg4);border-radius:9px;color:var(--t);font-size:14px;padding:12px;outline:none;font-family:var(--fb);resize:none;line-height:1.7" placeholder="Contenu du tract..."></textarea></div>
+        <div class="fr"><label>Slogan de fin</label><input type="text" id="tr-slogan" value="Les bras de l'&Eacute;tat... sans les moyens de l'&Eacute;tat."></div>
+        <div class="fr"><label>Contact</label><input type="text" id="tr-contact" value="CGT SNPTRI Section Nord 93 &mdash; Amar BENMANSOUR : 06 01 59 16 70"></div>
+        <button class="gbtn" onclick="genTract()">G&eacute;n&eacute;rer le tract</button>
+      </div>
+    </div>
+    <div class="prev" id="prev-tract">
+      <div id="tract-content"></div>
+      <div class="abr" style="margin-top:14px">
+        <button class="btn-cp" onclick="copierTract()">Copier texte</button>
+        <button class="btn-pr" onclick="window.print()">&#128424; Imprimer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COURRIERS -->
+<div class="pg" id="p-courriers">
+  <div class="hdr" style="padding-top:44px"><h1>COURRIERS TYPES</h1><p>6 mod&egrave;les pr&ecirc;ts &agrave; l'emploi</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Courriers types</div></div>
+  <div class="aw">
+    <div class="ctype-grid">
+      <div class="ctype-btn sel" onclick="selectCourrier(1,this)"><span class="ce">&#9888;&#65039;</span>Revendication</div>
+      <div class="ctype-btn" onclick="selectCourrier(2,this)"><span class="ce">&#128221;</span>R&eacute;clamation</div>
+      <div class="ctype-btn" onclick="selectCourrier(3,this)"><span class="ce">&#128276;</span>Signalement</div>
+      <div class="ctype-btn" onclick="selectCourrier(4,this)"><span class="ce">&#129309;</span>Demande audience</div>
+      <div class="ctype-btn" onclick="selectCourrier(5,this)"><span class="ce">&#128064;</span>Droit d'alerte</div>
+      <div class="ctype-btn" onclick="selectCourrier(6,this)"><span class="ce">&#128200;</span>Acc&egrave;s documents</div>
+      <div class="ctype-btn" onclick="selectCourrier(7,this)"><span class="ce">&#128101;</span>Demande r&eacute;union CE</div>
+      <div class="ctype-btn" onclick="selectCourrier(8,this)"><span class="ce">&#128308;</span>Pr&eacute;avis de gr&egrave;ve</div>
+    </div>
+    <div class="rcard">
+      <div class="rch"><h3 id="courrier-titre">Courrier de revendication</h3></div>
+      <div class="rf">
+        <div class="fr"><label>Destinataire</label><input type="text" id="co-dest" placeholder="Ex: M. le Directeur R&eacute;gional"></div>
+        <div class="fr"><label>Objet</label><input type="text" id="co-objet" value="Revendications syndicales &mdash; CGT SNPTRI Section Nord"></div>
+        <div class="fr"><label>Contexte / pr&eacute;cisions</label><textarea id="co-ctx" rows="4" style="width:100%;background:var(--bg3);border:1px solid var(--bg4);border-radius:9px;color:var(--t);font-size:14px;padding:12px;outline:none;font-family:var(--fb);resize:none;line-height:1.7" placeholder="Pr&eacute;cisez votre demande..."></textarea></div>
+        <button class="gbtn" onclick="genCourrier()">G&eacute;n&eacute;rer le courrier</button>
+      </div>
+    </div>
+    <div class="courrier-prev" id="courrier-prev">
+      <div id="courrier-content"></div>
+      <div class="abr" style="margin-top:14px">
+        <button class="btn-cp" onclick="copierCourrier()">Copier</button>
+        <button class="btn-pr" onclick="window.print()">&#128424; Imprimer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SIGNALEMENTS -->
+<div class="pg" id="p-signalements">
+  <div class="hdr" style="padding-top:44px"><h1>SIGNALEMENTS</h1><p>Fiches conditions de travail</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Signalements</div></div>
+  <div class="aw">
+    <div class="adh-stats-row">
+      <div class="adh-stat-box"><div class="asn" id="sig-open" style="color:#ef9a9a">0</div><div class="asl">Ouverts</div></div>
+      <div class="adh-stat-box"><div class="asn" id="sig-cours" style="color:#f5a623">0</div><div class="asl">En cours</div></div>
+      <div class="adh-stat-box"><div class="asn" id="sig-clos" style="color:#81c784">0</div><div class="asl">Clos</div></div>
+    </div>
+    <button class="gbtn" style="margin-bottom:12px" onclick="go('new_signal')">+ Nouveau signalement</button>
+    <div id="signal-list"></div>
+  </div>
+</div>
+
+<!-- NOUVEAU SIGNALEMENT -->
+<div class="pg" id="p-new_signal">
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Nouveau signalement</div></div>
+  <div class="rw">
+    <div class="rcard">
+      <div class="rch"><h3>Fiche de signalement</h3></div>
+      <div class="rf">
+        <div class="fr"><label>Agent concern&eacute; *</label><input type="text" id="sig-agent" placeholder="Nom de l'agent"></div>
+        <div class="fr2">
+          <div class="fr"><label>Date *</label><input type="date" id="sig-date"></div>
+          <div class="fr"><label>Cat&eacute;gorie</label>
+            <select id="sig-cat">
+              <option>Conditions de travail</option><option>S&eacute;curit&eacute;</option>
+              <option>Mat&eacute;riel d&eacute;fectueux</option><option>Discrimination</option>
+              <option>Harc&egrave;lement</option><option>Autre</option>
+            </select>
+          </div>
+        </div>
+        <div class="fr"><label>Description *</label><textarea id="sig-desc" rows="5" style="width:100%;background:var(--bg3);border:1px solid var(--bg4);border-radius:9px;color:var(--t);font-size:14px;padding:12px;outline:none;font-family:var(--fb);resize:none;line-height:1.7" placeholder="D&eacute;crivez pr&eacute;cis&eacute;ment la situation..."></textarea></div>
+        <div class="fr"><label>Actions men&eacute;es</label><input type="text" id="sig-action" placeholder="Ex: Transmis &agrave; l'encadrement le..."></div>
+        <div class="fr"><label>Statut</label>
+          <select id="sig-statut">
+            <option value="ouvert">Ouvert</option>
+            <option value="cours">En cours</option>
+            <option value="clos">Clos</option>
+          </select>
+        </div>
+        <button class="gbtn" onclick="saveSig()">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AGENDA -->
+<div class="pg" id="p-agenda">
+  <div class="hdr" style="padding-top:44px"><h1>AGENDA SECTION</h1><p>R&eacute;unions, permanences, &eacute;v&eacute;nements 2026</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Agenda section</div></div>
+  <div class="aw">
+    <div id="agenda-list"></div>
+    <div class="rcard" style="margin-top:10px">
+      <div class="rch"><h3>Ajouter un &eacute;v&eacute;nement</h3></div>
+      <div class="rf">
+        <div class="fr2">
+          <div class="fr"><label>Date *</label><input type="date" id="ag-date"></div>
+          <div class="fr"><label>Heure</label><input type="time" id="ag-heure" value="10:00"></div>
+        </div>
+        <div class="fr"><label>Intitul&eacute; *</label><input type="text" id="ag-titre" placeholder="Ex: R&eacute;union de section"></div>
+        <div class="fr2">
+          <div class="fr"><label>Lieu</label><input type="text" id="ag-lieu" placeholder="Ex: Salle syndicale"></div>
+          <div class="fr"><label>Type</label>
+            <select id="ag-type">
+              <option>R&eacute;union CE</option><option>R&eacute;union section</option>
+              <option>Permanence</option><option>Manifestation</option>
+              <option>Formation</option><option>Autre</option>
+            </select>
+          </div>
+        </div>
+        <button class="gbtn" onclick="addAgenda()">Ajouter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTIONS -->
+<div class="pg" id="p-elections">
+  <div class="hdr" style="padding-top:44px"><h1>&Eacute;LECTIONS 2026</h1><p>Pr&eacute;paration &eacute;lections professionnelles</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">&Eacute;lections d&eacute;c. 2026</div></div>
+  <div class="aw">
+    <div class="elec-countdown">
+      <div class="ec-label">Jours avant les &eacute;lections</div>
+      <div class="ec-num" id="elec-jours">---</div>
+      <div class="ec-unit">D&eacute;cembre 2026</div>
+    </div>
+    <div class="elec-grid" id="elec-stats-grid">
+      <div class="elec-box"><div class="eb-n" id="elec-nb-adh">19</div><div class="eb-l">Adh&eacute;rents section</div></div>
+      <div class="elec-box"><div class="eb-n" id="elec-nb-cand">—</div><div class="eb-l">Candidats pressentis</div></div>
+      <div class="elec-box"><div class="eb-n" id="elec-nb-elect">—</div><div class="eb-l">&Eacute;lecteurs inscrits</div></div>
+      <div class="elec-box"><div class="eb-n" id="elec-nb-coll">—</div><div class="eb-l">Coll&egrave;ge(s)</div></div>
+    </div>
+    <div class="rcard" style="margin-bottom:10px">
+      <div class="rch"><h3>Donn&eacute;es &eacute;lectorales</h3><p>Saisissez vos informations</p></div>
+      <div class="rf">
+        <div class="fr2">
+          <div class="fr"><label>Nb. candidats CGT</label><input type="text" id="elec-i-cand" placeholder="Ex: 2" oninput="updateElecStats()"></div>
+          <div class="fr"><label>Nb. &eacute;lecteurs inscrits</label><input type="text" id="elec-i-elect" placeholder="Ex: 45" oninput="updateElecStats()"></div>
+        </div>
+        <div class="fr2">
+          <div class="fr"><label>Nb. coll&egrave;ges</label><input type="text" id="elec-i-coll" placeholder="Ex: 1" oninput="updateElecStats()"></div>
+          <div class="fr"><label>Date pr&eacute;vue</label><input type="text" id="elec-i-date" placeholder="Ex: 10/12/2026" oninput="updateElecStats()"></div>
+        </div>
+        <div class="fr"><label>Candidats CGT</label><input type="text" id="elec-i-noms" placeholder="Ex: BENMANSOUR Amar, AMBROSI David"></div>
+        <div class="fr"><label>Programme / revendications</label><textarea id="elec-i-prog" rows="5" style="width:100%;background:var(--bg3);border:1px solid var(--bg4);border-radius:9px;color:var(--t);font-size:14px;padding:12px;outline:none;font-family:var(--fb);resize:none;line-height:1.7" placeholder="• Maintien des effectifs CEI&#10;• Revalorisation indemnités astreinte&#10;• ..."></textarea></div>
+        <div class="fr"><label>R&eacute;sultats historiques</label><textarea id="elec-i-histo" rows="3" style="width:100%;background:var(--bg3);border:1px solid var(--bg4);border-radius:9px;color:var(--t);font-size:14px;padding:12px;outline:none;font-family:var(--fb);resize:none;line-height:1.7" placeholder="2022 : xx% — 2018 : xx%"></textarea></div>
+        <button class="gbtn" onclick="saveElec()">Enregistrer</button>
+      </div>
+    </div>
+    <div id="elec-resume" style="display:none">
+      <div class="ac" id="elec-cand-card"><div class="at"><div class="ad">Candidats CGT</div><div class="an" id="elec-noms-display">—</div></div><div class="ab" id="elec-prog-display"></div></div>
+      <div class="ac" style="border-left-color:#1565c0;margin-top:8px" id="elec-histo-card"><div class="at"><div class="ad">R&eacute;sultats historiques</div></div><div class="ab" id="elec-histo-display"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SIMULATEUR PAIE -->
+<div class="pg" id="p-simulateur">
+  <div class="hdr" style="padding-top:44px"><h1>SIMULATEUR DE PAIE</h1><p>Net, brut, primes &mdash; FPE</p></div>
+  <div class="back-bar"><button class="back-btn" onclick="bk()">&#8249; Retour</button><div class="back-lbl">Simulateur de paie</div></div>
+  <div class="rw">
+    <div class="rcard">
+      <div class="rch"><h3>Donn&eacute;es de r&eacute;mun&eacute;ration</h3><p>Fonctionnaire FPE / DRIEA</p></div>
+      <div class="rf">
+        <div class="kleg" style="margin-bottom:12px;font-size:12px;">Donn&eacute;es pr&eacute;-remplies depuis votre <strong>bulletin de f&eacute;vrier 2026</strong>. Modifiez librement.</div>
+        <div class="fr2">
+          <div class="fr"><label>Indice major&eacute;</label><input type="number" id="sim-im" placeholder="Ex: 398" value="456" oninput="simCalc()"></div>
+          <div class="fr"><label>Traitement brut (&euro;)</label><input type="number" id="sim-brut" placeholder="Ex: 1959.26" value="2244.78" step="0.01" oninput="simCalc()"></div>
+        </div>
+        <div class="fr2">
+          <div class="fr"><label>Indemn. r&eacute;sidence (&euro;)</label><input type="number" id="sim-ir" value="67.34" step="0.01" oninput="simCalc()"></div>
+          <div class="fr"><label>Ind. suj&eacute;tions horaires (&euro;)</label><input type="number" id="sim-ish" value="206.60" step="0.01" oninput="simCalc()"></div>
+        </div>
+        <div class="fr2">
+          <div class="fr"><label>Prime technique (&euro;)</label><input type="number" id="sim-pt" value="610.00" step="0.01" oninput="simCalc()"></div>
+          <div class="fr"><label>Pr. services rendus (&euro;)</label><input type="number" id="sim-psr" value="119.88" step="0.01" oninput="simCalc()"></div>
+        </div>
+        <div class="fr2">
+          <div class="fr"><label>Indemn. astreinte (&euro;)</label><input type="number" id="sim-astr" value="292.60" step="0.01" oninput="simCalc()"></div>
+          <div class="fr"><label>Ind. comp. CSG (&euro;)</label><input type="number" id="sim-csgcomp" value="52.02" step="0.01" oninput="simCalc()"></div>
+        </div>
+        <div class="fr2">
+          <div class="fr"><label>H. sup. 14 prem. h. (&euro;)</label><input type="number" id="sim-hs1" value="266.70" step="0.01" oninput="simCalc()"></div>
+          <div class="fr"><label>H. sup. plus de 14h (&euro;)</label><input type="number" id="sim-hs2" value="367.65" step="0.01" oninput="simCalc()"></div>
+        </div>
+        <div class="fr2">
+          <div class="fr"><label>H. sup. dim./j.f. (&euro;)</label><input type="number" id="sim-hs3" value="428.62" step="0.01" oninput="simCalc()"></div>
+          <div class="fr"><label>H. sup. 22h-7h (&euro;)</label><input type="number" id="sim-hs4" value="533.40" step="0.01" oninput="simCalc()"></div>
+        </div>
+        <div class="fr2">
+          <div class="fr"><label>H. sup. nuit +14h (&euro;)</label><input type="number" id="sim-hs5" value="1180.35" step="0.01" oninput="simCalc()"></div>
+          <div class="fr"><label>Suppl. familial (&euro;)</label><input type="number" id="sim-sf" value="0" step="0.01" oninput="simCalc()"></div>
+        </div>
+      </div>
+    </div>
+    <div class="sim-result" id="sim-result">
+      <div class="sim-rh"><h3>R&eacute;sultat d&eacute;taill&eacute; &mdash; F&eacute;vrier 2026</h3></div>
+      <div class="sim-line"><span>Traitement brut (indice 456)</span><span id="r-brut">-</span></div>
+      <div class="sim-line"><span>H. suppl&eacute;mentaires (total)</span><span id="r-hs">-</span></div>
+      <div class="sim-line"><span>Primes &amp; indemnit&eacute;s</span><span id="r-primes">-</span></div>
+      <div class="sim-line total"><span>BRUT TOTAL</span><span id="r-brut-tot">-</span></div>
+      <div class="sim-line rd"><span>CSG + CRDS</span><span id="r-csg">-</span></div>
+      <div class="sim-line rd"><span>Retenue PC (CONTRIB.PC)</span><span id="r-ret">-</span></div>
+      <div class="sim-line rd"><span>RAFP (1%)</span><span id="r-rafp">-</span></div>
+      <div class="sim-line gn"><span>R&eacute;duction HS (exon&eacute;r&eacute;es)</span><span id="r-redhs">-</span></div>
+      <div class="sim-line total"><span>Net avant imp&ocirc;t sur le revenu</span><span id="r-net-ir">-</span></div>
+      <div class="sim-line rd"><span>Imp&ocirc;t &agrave; la source (PAS)</span><span id="r-irpas">-</span></div>
+      <div class="sim-line gn total"><span>&#128184; NET &Agrave; PAYER ESTIM&Eacute;</span><span id="r-net">-</span></div>
+      <div class="sim-line rd"><span>Cotisation syndicale (1%)</span><span id="r-cotsyn">-</span></div>
+      <div class="sim-line gn"><span>R&eacute;duction fiscale 66%</span><span id="r-reduct">-</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script>
+
+var JJ=["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"];
+var MM=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+var MC=["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+var JC=["Lu","Ma","Me","Je","Ve","Sa","Di"];
+var CE_M=[2,3,4,5,8,9,10,11];
+
+function tick(){
+  var n=new Date(),p=function(v){return String(v).padStart(2,"0");};
+  document.getElementById("clock").textContent=p(n.getHours())+":"+p(n.getMinutes())+":"+p(n.getSeconds());
+  document.getElementById("dateblock").innerHTML="<b>"+JJ[n.getDay()]+" "+n.getDate()+"</b><br>"+MM[n.getMonth()]+" "+n.getFullYear();
+}
+setInterval(tick,1000);tick();
+
+var H=["home"];
+function go(id){
+  document.getElementById("p-"+H[H.length-1]).classList.remove("on");
+  H.push(id);
+  document.getElementById("p-"+id).classList.add("on");
+  window.scrollTo(0,0);
+}
+function bk(){
+  if(H.length>1){
+    document.getElementById("p-"+H[H.length-1]).classList.remove("on");
+    H.pop();
+    document.getElementById("p-"+H[H.length-1]).classList.add("on");
+    window.scrollTo(0,0);
+  }
+}
+function toast(m){
+  var t=document.getElementById("toast");
+  t.textContent=m;t.classList.add("on");
+  setTimeout(function(){t.classList.remove("on");},2500);
+}
+
+function getSecondWed(yr,mo){
+  var cnt=0;
+  for(var d=1;d<=31;d++){
+    var dt=new Date(yr,mo,d);
+    if(dt.getMonth()!==mo)break;
+    if(dt.getDay()===3){cnt++;if(cnt===2)return d;}
+  }
+  return null;
+}
+
+var CE_CUSTOM={};
+
+function getDefaultCE(year,mo){
+  return CE_M.indexOf(mo)>=0?getSecondWed(year,mo):null;
+}
+
+function renderCal(year){
+  var grid=document.getElementById("cal-grid");
+  var titre=document.getElementById("cal-titre");
+  if(!grid)return;
+  grid.innerHTML="";
+  if(titre)titre.textContent=year;
+  var today=new Date();today.setHours(0,0,0,0);
+  for(var mo=0;mo<12;mo++){
+    var key=year+"-"+mo;
+    var defDay=getDefaultCE(year,mo);
+    var ceDay=(CE_CUSTOM[key]!==undefined)?CE_CUSTOM[key]:defDay;
+    var wrap=document.createElement("div");
+    wrap.className="cal-mois";
+    // Header avec champ CE editable
+    var hdr=document.createElement("div");
+    hdr.className="cal-mhdr";
+    var nm=document.createElement("span");
+    nm.className="cal-mnom";nm.textContent=MC[mo];
+    hdr.appendChild(nm);
+    var cewrap=document.createElement("div");
+    cewrap.className="cal-ce-wrap";
+    var lbl=document.createElement("span");
+    lbl.className="cal-ce-lbl";lbl.textContent="CE :";
+    cewrap.appendChild(lbl);
+    var inp=document.createElement("input");
+    inp.className="cal-ce-inp";
+    inp.type="text";
+    inp.maxLength=2;
+    inp.placeholder="--";
+    if(ceDay)inp.value=ceDay;
+    (function(k,yr,m2,w){
+      inp.addEventListener("input",function(){
+        var v=parseInt(this.value);
+        var dim=new Date(yr,m2+1,0).getDate();
+        if(!isNaN(v)&&v>=1&&v<=dim){CE_CUSTOM[k]=v;}
+        else if(this.value===""){CE_CUSTOM[k]=null;}
+        else{return;}
+        renderCal(yr);
+      });
+    })(key,year,mo,wrap);
+    cewrap.appendChild(inp);
+    hdr.appendChild(cewrap);
+    wrap.appendChild(hdr);
+    // Grille jours
+    var gcont=document.createElement("div");
+    gcont.className="cal-grid";
+    for(var j=0;j<7;j++){
+      var jn=document.createElement("div");
+      jn.className="cal-jnom";
+      jn.style.color=j>=5?"var(--r3)":"var(--t3)";
+      jn.textContent=JC[j];
+      gcont.appendChild(jn);
+    }
+    var fd=new Date(year,mo,1).getDay();
+    fd=fd===0?6:fd-1;
+    var dim=new Date(year,mo+1,0).getDate();
+    for(var e=0;e<fd;e++){
+      var emp2=document.createElement("div");
+      gcont.appendChild(emp2);
+    }
+    for(var day=1;day<=dim;day++){
+      var dt2=new Date(year,mo,day);
+      var dow=dt2.getDay();
+      var cell=document.createElement("div");
+      cell.className="cal-cell";
+      if(dt2.getTime()===today.getTime()) cell.classList.add("cal-today");
+      else if(ceDay&&day===ceDay) cell.classList.add("cal-ce-day");
+      
+      else cell.classList.add("cal-normal");
+      cell.textContent=day;
+      gcont.appendChild(cell);
+    }
+    wrap.appendChild(gcont);
+    if(ceDay){
+      var leg=document.createElement("div");
+      leg.className="cal-leg";
+      var dowCE=new Date(year,mo,ceDay).getDay();
+      leg.textContent="Réunion CE : "+JJ[dowCE]+" "+ceDay+" "+MM[mo]+" "+year;
+      wrap.appendChild(leg);
+    }
+    grid.appendChild(wrap);
+  }
+}
+
+function onYearChange(){
+  var sel=document.getElementById("an-yr");
+  if(sel)renderCal(parseInt(sel.value));
+}
+
+function calcCot(){
+  var s=parseFloat(document.getElementById("an-sal").value);
+  document.getElementById("an-cot").value=s>0?(s*0.01).toFixed(2)+" €":"";
+}
+
+function genRecu(){
+  var nom=document.getElementById("rn").value.trim();
+  var pre=document.getElementById("rp").value.trim();
+  var adr=document.getElementById("ra").value.trim();
+  var grd=document.getElementById("rg").value.trim();
+  var crt=document.getElementById("rc").value.trim();
+  var an=document.getElementById("ry").value;
+  var mt=parseFloat(document.getElementById("rm").value);
+  var dt=document.getElementById("rd").value;
+  if(!nom){toast("Nom obligatoire");return;}
+  if(!pre){toast("Prénom obligatoire");return;}
+  if(!mt||mt<=0){toast("Montant obligatoire");return;}
+  var ded=(mt*0.66).toFixed(2);
+  var ds=dt?new Date(dt).toLocaleDateString("fr-FR"):new Date().toLocaleDateString("fr-FR");
+  var h1="";
+  h1+='<div class="pl"><span>Adhérent(e)</span><span>'+pre+" "+nom.toUpperCase()+"</span></div>";
+  if(adr) h1+='<div class="pl"><span>Adresse</span><span>'+adr+"</span></div>";
+  if(grd) h1+='<div class="pl"><span>Corps / Grade</span><span>'+grd+"</span></div>";
+  if(crt) h1+='<div class="pl"><span>N° carte</span><span>'+crt+"</span></div>";
+  h1+='<div class="pl"><span>Année</span><span>'+an+"</span></div>";
+  h1+='<div class="pl"><span>Date</span><span>'+ds+"</span></div>";
+  document.getElementById("pb1").innerHTML=h1;
+  document.getElementById("pmv").textContent=mt.toFixed(2)+" euros";
+  var h2="";
+  h2+='<div class="pl"><span>Base légale</span><span>Art. 4 bis Code du Travail</span></div>';
+  h2+='<div class="pl"><span>Déductibilité (66%)</span><span style="color:#81c784">'+ded+" euros</span></div>";
+  document.getElementById("pb2").innerHTML=h2;
+  var p=document.getElementById("prev-recu");
+  p.classList.add("on");p.scrollIntoView({behavior:"smooth"});
+}
+
+function copierRecu(){
+  var n=document.getElementById("rn").value,p=document.getElementById("rp").value;
+  var m=document.getElementById("rm").value,a=document.getElementById("ry").value;
+  var txt="RECU FISCAL CGT SNPTRI 93\nAdhérent : "+p+" "+n+"\nAnnée : "+a+"\nMontant : "+parseFloat(m).toFixed(2)+" euros\nRéduction (66%) : "+(parseFloat(m)*0.66).toFixed(2)+" euros";
+  if(navigator.clipboard)navigator.clipboard.writeText(txt).then(function(){toast("Copié !");});
+}
+
+function genAdhesion(){
+  var nom=document.getElementById("an-nom").value.trim();
+  var pre=document.getElementById("an-pre").value.trim();
+  if(!nom){toast("Nom obligatoire");return;}
+  if(!pre){toast("Prénom obligatoire");return;}
+  var sex=document.getElementById("an-sex").value;
+  var ddn=document.getElementById("an-ddn").value;
+  var adr=document.getElementById("an-adr").value.trim();
+  var cp=document.getElementById("an-cp").value.trim();
+  var vil=document.getElementById("an-vil").value.trim();
+  var tel=document.getElementById("an-tel").value.trim();
+  var mail=document.getElementById("an-mail").value.trim();
+  var emp=document.getElementById("an-emp").value.trim();
+  var cor=document.getElementById("an-cor").value.trim();
+  var ech=document.getElementById("an-ech").value.trim();
+  var ind=document.getElementById("an-ind").value.trim();
+  var sal=parseFloat(document.getElementById("an-sal").value);
+  var yr=document.getElementById("an-yr").value;
+  var carte=document.getElementById("an-carte").value.trim();
+  var dt=document.getElementById("an-date").value;
+  var ddnF=ddn?new Date(ddn).toLocaleDateString("fr-FR"):"";
+  var dtF=dt?new Date(dt).toLocaleDateString("fr-FR"):new Date().toLocaleDateString("fr-FR");
+  document.getElementById("adh-sigdate").textContent=dtF;
+  var id="";
+  id+='<div class="pl"><span>Nom</span><span>'+(sex?sex+" ":"")+pre+" "+nom.toUpperCase()+"</span></div>";
+  if(ddnF) id+='<div class="pl"><span>Naissance</span><span>'+ddnF+"</span></div>";
+  if(adr) id+='<div class="pl"><span>Adresse</span><span>'+adr+(cp?" "+cp:"")+(vil?" "+vil:"")+"</span></div>";
+  if(tel) id+='<div class="pl"><span>Téléphone</span><span>'+tel+"</span></div>";
+  if(mail) id+='<div class="pl"><span>Email</span><span>'+mail+"</span></div>";
+  document.getElementById("adh-id").innerHTML=id;
+  var pro="";
+  if(emp) pro+='<div class="pl"><span>Employeur</span><span>'+emp+"</span></div>";
+  if(cor) pro+='<div class="pl"><span>Corps / Grade</span><span>'+cor+"</span></div>";
+  if(ech) pro+='<div class="pl"><span>Échelon</span><span>'+ech+"</span></div>";
+  if(ind) pro+='<div class="pl"><span>Indice brut</span><span>'+ind+"</span></div>";
+  pro+='<div class="pl"><span>Année adhésion</span><span>'+yr+"</span></div>";
+  if(carte) pro+='<div class="pl"><span>N° carte</span><span>'+carte+"</span></div>";
+  document.getElementById("adh-pro").innerHTML=pro;
+  if(sal>0){
+    var cot=(sal*0.01).toFixed(2);
+    var ann=(sal*0.12).toFixed(2);
+    var ded2=(sal*0.12*0.66).toFixed(2);
+    document.getElementById("adh-cotval").textContent=cot+" € / mois";
+    document.getElementById("adh-ann").textContent="Soit "+ann+" € / an — Déduction fiscale 66% = "+ded2+" €";
+  }else{
+    document.getElementById("adh-cotval").textContent="—";
+    document.getElementById("adh-ann").textContent="";
+  }
+  var p=document.getElementById("prev-adh");
+  p.classList.add("on");p.scrollIntoView({behavior:"smooth"});
+}
+
+function copierAdh(){
+  var nom=document.getElementById("an-nom").value;
+  var pre=document.getElementById("an-pre").value;
+  var sal=parseFloat(document.getElementById("an-sal").value)||0;
+  var txt="BULLETIN ADHESION CGT SNPTRI 93\nMembre : "+pre+" "+nom+"\nCorps : "+(document.getElementById("an-cor").value||"—")+"\nCotisation mensuelle : "+(sal*0.01).toFixed(2)+" euros\nAnnée : "+document.getElementById("an-yr").value;
+  if(navigator.clipboard)navigator.clipboard.writeText(txt).then(function(){toast("Copié !");});
+}
+
+
+// ═══ ADHÉRENTS ═══
+var ADHERENTS=[
+["27643","ADEL FABRICE","15 BVD HENRI BERGSON 95200 SARCELLES","","","ACTIF","RBA","CEEP","FPE","DIRIF AGER NORD ROSNY","1981","17/01/2026","","prélèvement","18.95"],
+["26124","AMBROSI DAVID","1 SQUARE DE GEYTER 93200 ST DENIS","","","ACTIF","RBA","CEED","FPE","DIRIF AGER NORD ROSNY","1972","17/01/2026","","prélèvement","22.45"],
+["27636","BAPTISTA QUENTIN","17 RUE DE L EGLISE 77230 MOUSSY LE NEUF","","","ACTIF","RBA","CEEP","FPE","DIRIF AGER NORD ROSNY","1996","17/01/2026","","prélèvement","18.51"],
+["27375","BENMANSOUR AMAR","13 RUE VOLTAIRE 93000 BOBIGNY","","","ACTIF","RBA","AEP","FPE","DIRIF AGER NORD ROSNY","","17/01/2026","","virement",""],
+["25513","COLOMBINE CEDRIC","12 RUE DU MOULIN 95280 JOUY LE MOUTIER","","","ACTIF","RBA","CEEP","FPE","DIRIF AGER OUEST JOUY EN JOSAS","","17/01/2026","7","prélèvement","20.68"],
+["20841","DIJON JEAN GUY","5 RUE DE LA GAITE 93000 BOBIGNY","","","ACTIF","RBA","CEEP","FPE","SYNDICAT NATIONAL","","17/01/2026","6","prélèvement","20.16"],
+["23951","FARHAT NORDINE","3 CLOS FLEURI 60180 NOGENT SUR OISE","","","ACTIF","RBA","TS","FPE","","","17/01/2026","","prélèvement","20.68"],
+["27150","HAUDIQUET HERVE","59 RUE DES GRENAUX 77410 ST MESMES","","","ACTIF","RBA","TS B3","FPT","CD","","17/01/2026","","prélèvement","20.68"],
+["27080","KABEL ERIC","22 AVENUE JACQUES CARTIER 77600 BUSSY ST GEORGES","","","ACTIF","RBA","CEEP","FPE","DIRIF AGER EST BRIE COMTE ROBERT","","17/01/2026","","chèque",""],
+["26801","LEBEAU OLIVIER","18 RUE SIMONE VEIL 60330 LE PLESSIS BELLEVILLE","olivier.lebeau@developpement-durable.gouv.fr","699805436","ACTIF","RBA","TS B1","","DIRIF AGER NORD ROSNY","","17/01/2026","8","virement",""],
+["26944","MAES MARIUS","102 RUE DU LYS 77150 LESIGNY","","","ACTIF","","CEED","FPE","DIRIF AGER EST BRIE COMTE ROBERT","","17/01/2026","","prélèvement","22.45"],
+["27635","MOKEDDEM SEFIR","2 RUE DE L AIGUILLON 77185 LOGNES","","","ACTIF","RBA","AEP","FPE","DIRIF AGER NORD ROSNY","","17/01/2026","","prélèvement","18.56"],
+["24433","MORVILLE JULIEN","18 RUZ DE JOUARRE 77260 SEPT SORTS","","","ACTIF","RBA","CEEP","FPE","DIRIF AGER NORD ROSNY","","17/01/2026","","chèque",""],
+["26122","PATAN FABIEN","40 ALLEE DE LA MARE A DUMEZ 77230 DAMMARTIN EN GOELE","","","ACTIF","RBA","TS B1","FPE","DIRIF AGER NORD ST DENIS","","17/01/2026","","prélèvement","20.68"],
+["27213","QUEIROGA JOAQUIM","29 RUE DES BUCHERONS 95330 DOMONT","joaquim.queiroga@developpement-durable.gouv.fr","760328760","ACTIF","RBA","CEEP","FPE","DIRIF AGER NORD ROSNY","1974","17/01/2026","7","virement",""],
+["22322","ROSBIF THEODORE","10 RUE JEAN VAILLANT 51310 LANOUE","","","ACTIF","RBA","CEEP","FPE","DIRIF AGER NORD ST DENIS","","17/01/2026","","prélèvement","20.68"],
+["26806","SELBONNE ROLLAND","2 MAIL JB CHARCOT RESIDENCE BOUGAINVILLEE 60110 MERU","","","ACTIF","RBA","CEEP","FPE","DIRIF AGER NORD ERAGNY","","17/01/2026","","prélèvement","20.68"],
+["18214","SILENE GAETAN","14 RUE ODEBERT 21000 DIJON","","","ACTIF","RBA","TS B1","FPE","SYNDICAT NATIONAL","","17/01/2026","","prélèvement","21.96"],
+["—","OVARBURY JOHAN","38 BVD VINCENT AURIOL BAT 17 75013 PARIS","","","ACTIF","RBA","CEEP","FPE","AGER NORD ROSNY","","04/03/2026","","prélèvement","18.95"],
+["—","SIRNER EDDY","7 SQUARE DU BRANDON 02290 VIC SUR AISNE","","","ACTIF","RBA","CEEP","FPE","DIRIF AGER NORD ROSNY","","27/03/2026","","prélèvement","18.95"],
+["—","BAOUZ YOUSSEF","40 AVENUE DU COLONEL FABIEN 93200 ST DENIS","","","ACTIF","RBA","AEP","FPE","DIRIF AGER NORD ST DENIS","1971","27/03/2026","","prélèvement","18.02"],
+["—","NAJMI ABDELALLI","17 RUE CYRILLE DE FOUR 60160 MONTATAIRE","","","ACTIF","RBA","AEP","FPE","DIRIF AGER NORD ST DENIS","1978","27/03/2026","","prélèvement","19.54"]
+];
+var adhFilter="tous";
+function initials(n){var p=n.trim().split(" ");return p.length>1?(p[0][0]+p[1][0]).toUpperCase():n.substring(0,2).toUpperCase();}
+function initAdhStats(){
+  var rosny=0,tot=0;
+  ADHERENTS.forEach(function(a){if(a[9].indexOf("ROSNY")>=0)rosny++;tot+=(parseFloat(a[14])||0);});
+  var er=document.getElementById("adh-rosny"); if(er)er.textContent=rosny;
+  var et=document.getElementById("adh-cotis-tot"); if(et)et.textContent=tot.toFixed(0)+"\u20ac";
+}
+function renderAdh(list){
+  var c=document.getElementById("adh-list"); if(!c)return; c.innerHTML="";
+  var et=document.getElementById("adh-total"); if(et)et.textContent=list.length;
+  if(!list.length){c.innerHTML='<div style="text-align:center;padding:30px;color:var(--t4)">Aucun r\u00e9sultat</div>';return;}
+  list.forEach(function(a){
+    var num=a[0],nom=a[1],adr=a[2],email=a[3],tel=a[4],grade=a[7],fp=a[8],affect=a[9],naiss=a[10],maj=a[11],echelon=a[12],regl=a[13],mnt=a[14];
+    var ms=mnt?mnt+" \u20ac/mois":"\u2014";
+    var div=document.createElement("div"); div.className="adh-card";
+    div.innerHTML='<div class="adh-main" onclick="this.closest(\'.adh-card\').classList.toggle(\'expanded\')">'+
+      '<div class="adh-avatar">'+initials(nom)+'</div>'+
+      '<div class="adh-info"><div class="an">'+nom+'</div><div class="as">'+grade+(affect?" \u2014 "+affect:"")+'</div></div>'+
+      '<div class="adh-right"><div class="adh-montant">'+ms+'</div><div class="adh-regl">'+regl+'</div></div>'+
+      '</div>'+
+      '<div class="adh-detail">'+
+      '<div class="adh-num">N\u00b0 '+num+' \u2014 MAJ '+maj+'</div>'+
+      '<div class="adh-dg">'+
+      '<div class="adh-di"><div class="dk">Grade</div><div class="dv">'+grade+'</div></div>'+
+      '<div class="adh-di"><div class="dk">FP</div><div class="dv">'+(fp||"\u2014")+'</div></div>'+
+      (naiss?'<div class="adh-di"><div class="dk">Naissance</div><div class="dv">'+naiss+'</div></div>':"")+
+      (echelon?'<div class="adh-di"><div class="dk">\u00c9chelon</div><div class="dv">'+echelon+'</div></div>':"")+
+      '</div>'+
+      '<div class="adh-df"><div class="dk">Adresse</div><div class="dv">'+adr+'</div></div>'+
+      (email?'<div class="adh-df" style="margin-top:6px"><div class="dk">Email</div><div class="dv" style="color:#90caf9">'+email+'</div></div>':"")+
+      (tel?'<div class="adh-df" style="margin-top:6px"><div class="dk">T\u00e9l</div><div class="dv" style="color:#90caf9">'+tel+'</div></div>':"")+
+      '</div>';
+    c.appendChild(div);
+  });
+}
+function filterAdh(){
+  var q=(document.getElementById("adh-q")||{value:""}).value.toLowerCase();
+  var f=ADHERENTS.filter(function(a){
+    var txt=(a[0]+" "+a[1]+" "+a[7]+" "+a[9]+" "+a[13]).toLowerCase();
+    var mq=!q||txt.indexOf(q)>=0;
+    var mf=true;
+    if(adhFilter=="rosny")mf=a[9].indexOf("ROSNY")>=0;
+    else if(adhFilter=="prelevement")mf=a[13]=="pr\u00e9l\u00e8vement";
+    else if(adhFilter=="virement")mf=a[13]=="virement";
+    else if(adhFilter=="cheque")mf=a[13]=="ch\u00e8que";
+    return mq&&mf;
+  });
+  renderAdh(f);
+}
+function setFtag(f,el){
+  adhFilter=f;
+  document.querySelectorAll(".ftag").forEach(function(t){t.classList.remove("on");});
+  el.classList.add("on");
+  filterAdh();
+}
+
+// ═══ SUIVI COTISATIONS ═══
+var COTIS_STATUS={};
+function initCotisStatus(){
+  try{var s=localStorage.getItem("cgt93_cotis");if(s)COTIS_STATUS=JSON.parse(s);}catch(e){}
+  renderCotisList();
+}
+function renderCotisList(){
+  var c=document.getElementById("cotis-list"); if(!c)return; c.innerHTML="";
+  var ok=0,att=0,tot=0;
+  ADHERENTS.forEach(function(a){
+    var id="c_"+a[0]+"_"+a[1].replace(/\s/g,"");
+    var stat=COTIS_STATUS[id]||"ok";
+    var mnt=parseFloat(a[14])||0;
+    if(stat=="ok"){ok++;tot+=mnt;}else att++;
+    var pc=stat=="ok"?"sp-ok":stat=="att"?"sp-att":"sp-ret";
+    var pl=stat=="ok"?"\u00c0 jour":stat=="att"?"En attente":"Retard";
+    var row=document.createElement("div"); row.className="cotis-row";
+    row.innerHTML='<div class="cr-nom">'+a[1]+'</div>'+
+      '<div class="cr-mnt">'+(mnt?mnt.toFixed(2)+" \u20ac":"\u2014")+'</div>'+
+      '<div class="cr-stat"><span class="stat-pill '+pc+'" onclick="toggleCotis(\''+id+'\')">'+pl+'</span></div>'+
+      '<div class="cr-del"></div>';
+    c.appendChild(row);
+  });
+  var e1=document.getElementById("sc-ok"); if(e1)e1.textContent=ok;
+  var e2=document.getElementById("sc-att"); if(e2)e2.textContent=att;
+  var e3=document.getElementById("sc-tot"); if(e3)e3.textContent=tot.toFixed(0)+"\u20ac";
+}
+function toggleCotis(id){
+  var s=COTIS_STATUS[id]||"ok";
+  COTIS_STATUS[id]=s=="ok"?"att":s=="att"?"ret":"ok";
+  try{localStorage.setItem("cgt93_cotis",JSON.stringify(COTIS_STATUS));}catch(e){}
+  renderCotisList(); toast("Statut mis \u00e0 jour");
+}
+
+// ═══ BUDGET ═══
+var BUDGET=[];
+function initBudget(){
+  try{var s=localStorage.getItem("cgt93_budget");if(s)BUDGET=JSON.parse(s);}catch(e){}
+  renderBudget();
+}
+function addBudgetLine(type){
+  var lib=prompt("Libell\u00e9 "+(type=="recette"?"recette":"d\u00e9pense")+" :"); if(!lib)return;
+  var mnt=parseFloat(prompt("Montant (\u20ac) :")); if(!mnt||mnt<=0){toast("Montant invalide");return;}
+  BUDGET.push({lib:lib,mnt:mnt,type:type,date:new Date().toLocaleDateString("fr-FR")});
+  try{localStorage.setItem("cgt93_budget",JSON.stringify(BUDGET));}catch(e){}
+  renderBudget(); toast("Ligne ajout\u00e9e");
+}
+function renderBudget(){
+  var c=document.getElementById("budget-list"); var e=document.getElementById("budget-empty"); if(!c)return;
+  c.innerHTML=""; var rec=0,dep=0;
+  BUDGET.forEach(function(b,i){
+    rec+=(b.type=="recette"?b.mnt:0); dep+=(b.type=="depense"?b.mnt:0);
+    var row=document.createElement("div"); row.className="budget-line";
+    row.innerHTML='<div class="bl-lib">'+b.lib+'<br><span style="font-size:10px;color:var(--t3)">'+b.date+'</span></div>'+
+      '<div class="bl-mnt '+(b.type=="recette"?"rec":"dep")+'">'+(b.type=="recette"?"+":"-")+b.mnt.toFixed(2)+' \u20ac</div>'+
+      '<div class="bl-type"><span class="stat-pill '+(b.type=="recette"?"sp-ok":"sp-ret")+'">'+b.type+'</span></div>'+
+      '<div class="bl-del"><button onclick="delBudget('+i+')">\uD83D\uDDD1</button></div>';
+    c.appendChild(row);
+  });
+  var solde=rec-dep;
+  var se=document.getElementById("bud-solde"); if(se)se.textContent=(solde>=0?"+":"")+solde.toFixed(2)+" \u20ac";
+  var re=document.getElementById("bud-rec"); if(re)re.textContent="+"+rec.toFixed(2)+" \u20ac";
+  var de=document.getElementById("bud-dep"); if(de)de.textContent="-"+dep.toFixed(2)+" \u20ac";
+  if(e)e.style.display=BUDGET.length?"none":"block";
+}
+function delBudget(i){
+  if(!confirm("Supprimer ?"))return;
+  BUDGET.splice(i,1);
+  try{localStorage.setItem("cgt93_budget",JSON.stringify(BUDGET));}catch(e){}
+  renderBudget();
+}
+
+// ═══ TRACTS ═══
+function genTract(){
+  var t=document.getElementById("tr-titre").value.trim();
+  var s=document.getElementById("tr-sous").value.trim();
+  var d=document.getElementById("tr-date").value.trim();
+  var b=document.getElementById("tr-body").value.trim();
+  var sl=document.getElementById("tr-slogan").value.trim();
+  var co=document.getElementById("tr-contact").value.trim();
+  if(!t||!b){toast("Titre et corps obligatoires");return;}
+  var today=new Date().toLocaleDateString("fr-FR");
+  var h='<div class="tract-prev">';
+  h+='<div class="th"><h2>'+t+'</h2>';
+  if(s)h+='<p style="font-size:14px;font-weight:700;color:#b71c1c;margin-top:4px">'+s+'</p>';
+  if(d)h+='<p style="margin-top:6px;font-size:12px;color:#555">'+d+'</p>';
+  h+='</div>';
+  h+='<div class="tb">'+b+'</div>';
+  if(sl)h+='<div style="text-align:center;margin:16px 0;font-size:15px;font-weight:900;color:#b71c1c;padding:10px;border:2px solid #b71c1c;border-radius:8px;">'+sl+'</div>';
+  h+='<div class="tf">'+co+'<br>Tract du '+today+'</div></div>';
+  document.getElementById("tract-content").innerHTML=h;
+  var p=document.getElementById("prev-tract"); p.classList.add("on"); p.scrollIntoView({behavior:"smooth"});
+}
+function copierTract(){
+  var t=document.getElementById("tr-titre").value;
+  var b=document.getElementById("tr-body").value;
+  if(navigator.clipboard)navigator.clipboard.writeText(t+"\n\n"+b).then(function(){toast("Copi\u00e9 !");});
+}
+
+// ═══ COURRIERS ═══
+var courrierType=1;
+var MODELES={
+  1:{titre:"Courrier de revendication",objet:"Revendications syndicales \u2014 CGT SNPTRI Section Nord"},
+  2:{titre:"Courrier de r\u00e9clamation",objet:"R\u00e9clamation \u2014 CGT SNPTRI Section Nord 93"},
+  3:{titre:"Courrier de signalement",objet:"Signalement \u2014 Conditions de travail"},
+  4:{titre:"Demande d\u2019audience",objet:"Demande d\u2019audience \u2014 CGT SNPTRI Section Nord 93"},
+  5:{titre:"Droit d\u2019alerte",objet:"EXERCICE DU DROIT D\u2019ALERTE \u2014 CGT SNPTRI 93"},
+  6:{titre:"Demande d\u2019acc\u00e8s aux documents",objet:"Demande communication de documents"},
+  7:{titre:"Demande de r\u00e9union CE / section",objet:"Demande de r\u00e9union du Comit\u00e9 d\u2019\u00c9tablissement \u2014 CGT SNPTRI Section Nord 93"},
+  8:{titre:"Pr\u00e9avis de gr\u00e8ve",objet:"PR\u00c9AVIS DE GR\u00c8VE \u2014 CGT SNPTRI Section Nord 93"}
+};
+var CORPS={
+  1:function(dest,ctx){return "Madame, Monsieur,\n\nLa section syndicale CGT SNPTRI 93 vous adresse ce courrier afin de porter \u00e0 votre connaissance nos revendications.\n\n"+(ctx||"[Pr\u00e9cisez vos revendications ici.]")+"\n\nNous restons disponibles pour toute rencontre.\n\nCordialement,\nAmar BENMANSOUR \u2014 CGT SNPTRI Section Nord 93 \u2014 06 01 59 16 70";},
+  2:function(dest,ctx){return "Madame, Monsieur,\n\nLa CGT SNPTRI Section Nord vous adresse la pr\u00e9sente r\u00e9clamation.\n\n"+(ctx||"[D\u00e9crivez l\u2019objet de la r\u00e9clamation.]")+"\n\nNous vous demandons une r\u00e9ponse \u00e9crite sous 15 jours ouvrables.\n\nCordialement,\nAmar BENMANSOUR \u2014 06 01 59 16 70";},
+  3:function(dest,ctx){return "Madame, Monsieur,\n\nLa section CGT SNPTRI 93 porte \u00e0 votre attention le signalement suivant :\n\n"+(ctx||"[D\u00e9crivez la situation signal\u00e9e.]")+"\n\nNous vous demandons de prendre les mesures correctives n\u00e9cessaires sans d\u00e9lai.\n\nAmar BENMANSOUR \u2014 CGT SNPTRI Section Nord 93";},
+  4:function(dest,ctx){return "Madame, Monsieur,\n\nLa section syndicale CGT SNPTRI 93 sollicite une audience aupr\u00e8s de "+(dest||"la Direction")+".\n\n"+(ctx||"")+"\n\nNous souhaiterions aborder les conditions de travail, les effectifs et les revendications salariales.\n\nAmar BENMANSOUR \u2014 06 01 59 16 70";},
+  5:function(dest,ctx){return "EXERCICE DU DROIT D\u2019ALERTE\n\nConform\u00e9ment aux articles L4131-1 et suivants du Code du Travail, la CGT SNPTRI Section Nord 93 exerce son DROIT D\u2019ALERTE concernant :\n\n"+(ctx||"[D\u00e9crivez la situation de danger.]")+"\n\nNous exigeons une r\u00e9ponse imm\u00e9diate et des mesures conservatoires sans d\u00e9lai.\n\nCGT SNPTRI Section Nord 93 \u2014 Amar BENMANSOUR \u2014 06 01 59 16 70";},
+  6:function(dest,ctx){return "Madame, Monsieur,\n\nLa section CGT SNPTRI 93 sollicite la communication des documents suivants :\n\n"+(ctx||"[Listez les documents demand\u00e9s.]")+"\n\nNous vous demandons de nous transmettre ces \u00e9l\u00e9ments dans un d\u00e9lai de 8 jours ouvrables.\n\nAmar BENMANSOUR \u2014 CGT SNPTRI Section Nord 93";},
+  7:function(dest,ctx){var d=new Date().toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"});return "Madame, Monsieur,\n\nLa section syndicale CGT SNPTRI 93, repr\u00e9sentant les personnels de l'AGER Nord / DIRIF, sollicite la tenue d'une r\u00e9union du Comit\u00e9 d'\u00c9tablissement.\n\n"+(ctx?ctx+"\n\n":"")+"Points souhait\u00e9s \u00e0 l'ordre du jour :\n\u2022 Effectifs et mouvements de personnel\n\u2022 Conditions de travail et s\u00e9curit\u00e9\n\u2022 Mat\u00e9riel et \u00e9quipements\n\u2022 Budget et formations\n\u2022 Questions diverses\n\nConform\u00e9ment \u00e0 l'article L2325-14 du Code du Travail, nous vous demandons de bien vouloir fixer une date dans les meilleurs d\u00e9lais.\n\nFait \u00e0 Rosny-sous-Bois, le "+d+"\nPour la section CGT SNPTRI 93\nAmar BENMANSOUR \u2014 06 01 59 16 70";},
+  8:function(dest,ctx){var d=new Date().toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"});return "Madame, Monsieur,\n\nConform\u00e9ment aux articles L2512-1 et suivants du Code du Travail, la section syndicale CGT SNPTRI 93 vous notifie le pr\u00e9sent PR\u00c9AVIS DE GR\u00c8VE.\n\n=== INFORMATIONS ===\nOrganisation syndicale : CGT SNPTRI \u2014 Section Nord Seine-Saint-Denis\nServices concern\u00e9s : DRIEAT / DIRIF / AGER Nord / CEI Rosny-sous-Bois\nDate et heure de d\u00e9but : [\u00e0 compl\u00e9ter]\nDate et heure de fin : [\u00e0 compl\u00e9ter]\n\n=== MOTIFS ===\n"+(ctx?ctx:"\u2022 [Motif principal]\n\u2022 [Motif secondaire]")+"\n\n=== REVENDICATIONS ===\n\u2022 Maintien et renforcement des effectifs CEI\n\u2022 Revalorisation des indemnit\u00e9s d'astreinte et de nuit\n\u2022 Am\u00e9lioration des conditions de travail et de s\u00e9curit\u00e9\n\u2022 Dotation mat\u00e9rielle adapt\u00e9e\n\nCe pr\u00e9avis est d\u00e9pos\u00e9 5 jours francs avant le d\u00e9but du mouvement, conform\u00e9ment \u00e0 la r\u00e9glementation en vigueur.\n\nFait \u00e0 Rosny-sous-Bois, le "+d+"\nPour la section CGT SNPTRI 93\nAmar BENMANSOUR \u2014 Responsable de section \u2014 06 01 59 16 70";}
+};
+function selectCourrier(n,el){
+  courrierType=n;
+  document.querySelectorAll(".ctype-btn").forEach(function(b){b.classList.remove("sel");});
+  el.classList.add("sel");
+  var m=MODELES[n]; if(!m)return;
+  var ct=document.getElementById("courrier-titre"); if(ct)ct.textContent=m.titre;
+  var co=document.getElementById("co-objet"); if(co)co.value=m.objet;
+  document.getElementById("courrier-prev").classList.remove("on");
+}
+function genCourrier(){
+  var dest=(document.getElementById("co-dest").value||"").trim()||"Monsieur le Directeur R\u00e9gional";
+  var objet=(document.getElementById("co-objet").value||"").trim();
+  var ctx=(document.getElementById("co-ctx").value||"").trim();
+  var fn=CORPS[courrierType]; if(!fn){toast("Type invalide");return;}
+  var today=new Date().toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"});
+  var corps=fn(dest,ctx);
+  var h='<p style="font-size:11px;color:#777;margin-bottom:10px">CGT SNPTRI \u2014 Section Nord Seine-Saint-Denis<br>Rosny-sous-Bois, le '+today+'</p>';
+  h+='<p style="margin-bottom:10px"><b>\u00c0 l\u2019attention de :</b> '+dest+'</p>';
+  h+='<p style="margin-bottom:12px"><b>Objet :</b> '+objet+'</p><hr style="border:1px solid #ddd;margin-bottom:12px">';
+  h+='<p style="white-space:pre-wrap;font-size:13px;line-height:1.85">'+corps+'</p>';
+  document.getElementById("courrier-content").innerHTML=h;
+  var p=document.getElementById("courrier-prev"); p.classList.add("on"); p.scrollIntoView({behavior:"smooth"});
+}
+function copierCourrier(){
+  var c=document.getElementById("courrier-content"); if(!c)return;
+  if(navigator.clipboard)navigator.clipboard.writeText(c.innerText||c.textContent).then(function(){toast("Copi\u00e9 !");});
+}
+
+// ═══ SIGNALEMENTS ═══
+var SIGNAUX=[];
+function initSignaux(){
+  try{var s=localStorage.getItem("cgt93_signals");if(s)SIGNAUX=JSON.parse(s);}catch(e){}
+  renderSignaux();
+}
+function saveSig(){
+  var ag=(document.getElementById("sig-agent")||{value:""}).value.trim();
+  var dt=(document.getElementById("sig-date")||{value:""}).value;
+  var cat=(document.getElementById("sig-cat")||{value:""}).value;
+  var desc=(document.getElementById("sig-desc")||{value:""}).value.trim();
+  var act=(document.getElementById("sig-action")||{value:""}).value.trim();
+  var stat=(document.getElementById("sig-statut")||{value:"ouvert"}).value;
+  if(!ag||!dt||!desc){toast("Agent, date et description obligatoires");return;}
+  SIGNAUX.unshift({ag:ag,dt:dt,cat:cat,desc:desc,act:act,stat:stat,created:new Date().toLocaleDateString("fr-FR")});
+  try{localStorage.setItem("cgt93_signals",JSON.stringify(SIGNAUX));}catch(e){}
+  renderSignaux();
+  ["sig-agent","sig-desc","sig-action"].forEach(function(id){var e=document.getElementById(id);if(e)e.value="";});
+  toast("Signalement enregistr\u00e9"); bk();
+}
+function renderSignaux(){
+  var c=document.getElementById("signal-list"); if(!c)return; c.innerHTML="";
+  var op=0,co=0,cl=0;
+  if(!SIGNAUX.length){c.innerHTML='<div style="text-align:center;padding:24px;color:var(--t4)">Aucun signalement enregistr\u00e9</div>';
+  }else SIGNAUX.forEach(function(s,i){
+    if(s.stat=="ouvert")op++;else if(s.stat=="cours")co++;else cl++;
+    var cls=s.stat=="ouvert"?"stat-open":s.stat=="cours"?"stat-cours":"stat-clos";
+    var lbl=s.stat=="ouvert"?"\uD83D\uDD34 Ouvert":s.stat=="cours"?"\uD83D\uDFE1 En cours":"\uD83D\uDFE2 Clos";
+    var dtF=s.dt?new Date(s.dt).toLocaleDateString("fr-FR"):"";
+    var div=document.createElement("div"); div.className="signal-card "+cls;
+    div.innerHTML='<div class="sc-hdr"><span class="sc-titre">'+s.ag+" \u2014 "+s.cat+'</span><span class="sc-date">'+dtF+'</span></div>'+
+      '<div class="sc-body">'+s.desc+(s.act?"<br><br><b>Actions :</b> "+s.act:"")+"<br><br>"+lbl+
+      ' <button onclick="delSig('+i+')" style="background:none;border:none;color:var(--t4);cursor:pointer">\uD83D\uDDD1</button></div>';
+    c.appendChild(div);
+  });
+  var eo=document.getElementById("sig-open"); if(eo)eo.textContent=op;
+  var ec=document.getElementById("sig-cours"); if(ec)ec.textContent=co;
+  var ef=document.getElementById("sig-clos"); if(ef)ef.textContent=cl;
+}
+function delSig(i){
+  if(!confirm("Supprimer ce signalement ?"))return;
+  SIGNAUX.splice(i,1);
+  try{localStorage.setItem("cgt93_signals",JSON.stringify(SIGNAUX));}catch(e){}
+  renderSignaux();
+}
+
+// ═══ AGENDA ═══
+var AGENDA_BASE=[];
+function initAgenda(){
+  var extra=[]; try{var s=localStorage.getItem("cgt93_agenda");if(s)extra=JSON.parse(s);}catch(e){}
+  renderAgenda(AGENDA_BASE.concat(extra));
+}
+function addAgenda(){
+  var dt=(document.getElementById("ag-date")||{value:""}).value;
+  var hr=(document.getElementById("ag-heure")||{value:"10:00"}).value;
+  var t=(document.getElementById("ag-titre")||{value:""}).value.trim();
+  var lieu=(document.getElementById("ag-lieu")||{value:""}).value.trim();
+  var type=(document.getElementById("ag-type")||{value:""}).value;
+  if(!dt||!t){toast("Date et intitul\u00e9 obligatoires");return;}
+  var extra=[]; try{var s=localStorage.getItem("cgt93_agenda");if(s)extra=JSON.parse(s);}catch(e){}
+  extra.push({dt:dt,hr:hr,titre:t,lieu:lieu,type:type});
+  try{localStorage.setItem("cgt93_agenda",JSON.stringify(extra));}catch(e){}
+  renderAgenda(AGENDA_BASE.concat(extra));
+  var at=document.getElementById("ag-titre"); if(at)at.value="";
+  var al=document.getElementById("ag-lieu"); if(al)al.value="";
+  toast("\u00c9v\u00e9nement ajout\u00e9");
+}
+function renderAgenda(list){
+  var c=document.getElementById("agenda-list"); if(!c)return; c.innerHTML="";
+  var today=new Date(); today.setHours(0,0,0,0);
+  var mm=["jan","f\u00e9v","mar","avr","mai","jun","jul","ao\u00fb","sep","oct","nov","d\u00e9c"];
+  var sorted=list.slice().sort(function(a,b){return a.dt.localeCompare(b.dt);});
+  var upcoming=sorted.filter(function(e){return new Date(e.dt)>=today;});
+  var past=sorted.filter(function(e){return new Date(e.dt)<today;}).reverse();
+  function mkItem(ev){
+    var dt=new Date(ev.dt);
+    var div=document.createElement("div"); div.className="agenda-item";
+    div.innerHTML='<div class="agenda-date"><div class="ad-j">'+dt.getDate()+'</div><div class="ad-m">'+mm[dt.getMonth()]+'</div></div>'+
+      '<div class="agenda-info"><div class="ai-t">'+ev.titre+'</div>'+
+      '<div class="ai-s">'+ev.type+(ev.hr?" \u2014 "+ev.hr:"")+'</div>'+
+      (ev.lieu?'<div class="ai-l">\uD83D\uDCCD '+ev.lieu+'</div>':"")+
+      '</div>';
+    c.appendChild(div);
+  }
+  if(upcoming.length){var l=document.createElement("div");l.className="mlbl";l.style.padding="8px 0 6px";l.textContent="\u00c0 venir";c.appendChild(l);upcoming.forEach(mkItem);}
+  if(past.length){var l2=document.createElement("div");l2.className="mlbl";l2.style.cssText="padding:12px 0 6px;color:var(--t4)";l2.textContent="Pass\u00e9s";c.appendChild(l2);past.slice(0,3).forEach(mkItem);}
+}
+
+// ═══ ÉLECTIONS ═══
+function initElections(){
+  var e=document.getElementById("elec-jours"); if(!e)return;
+  var diff=Math.ceil((new Date("2026-12-10")-new Date())/(86400000));
+  e.textContent=diff>0?diff:"Pass\u00e9";
+  // Charger données sauvegardées
+  try{var s=localStorage.getItem("cgt93_elec");if(s){var d=JSON.parse(s);
+    var fi=function(id,v){var el=document.getElementById(id);if(el&&v)el.value=v;};
+    fi("elec-i-cand",d.cand);fi("elec-i-elect",d.elect);fi("elec-i-coll",d.coll);
+    fi("elec-i-date",d.date);fi("elec-i-noms",d.noms);fi("elec-i-prog",d.prog);fi("elec-i-histo",d.histo);
+    updateElecStats();
+  }}catch(e2){}
+}
+function updateElecStats(){
+  var g=function(id){var e=document.getElementById(id);return e?e.value.trim():"";};
+  var cand=g("elec-i-cand"),elect=g("elec-i-elect"),coll=g("elec-i-coll"),noms=g("elec-i-noms"),prog=g("elec-i-prog"),histo=g("elec-i-histo");
+  var ec=document.getElementById("elec-nb-cand");if(ec)ec.textContent=cand||"\u2014";
+  var ee=document.getElementById("elec-nb-elect");if(ee)ee.textContent=elect||"\u2014";
+  var eco=document.getElementById("elec-nb-coll");if(eco)eco.textContent=coll||"\u2014";
+}
+function saveElec(){
+  var g=function(id){var e=document.getElementById(id);return e?e.value.trim():"";};
+  var d={cand:g("elec-i-cand"),elect:g("elec-i-elect"),coll:g("elec-i-coll"),date:g("elec-i-date"),noms:g("elec-i-noms"),prog:g("elec-i-prog"),histo:g("elec-i-histo")};
+  try{localStorage.setItem("cgt93_elec",JSON.stringify(d));}catch(e){}
+  updateElecStats();
+  // Afficher résumé
+  var nr=document.getElementById("elec-resume");
+  var nd=document.getElementById("elec-noms-display");
+  var pd=document.getElementById("elec-prog-display");
+  var hd=document.getElementById("elec-histo-display");
+  if(nd)nd.textContent=d.noms||"\u2014";
+  if(pd)pd.innerHTML=(d.prog||"").replace(/\n/g,"<br>");
+  if(hd)hd.innerHTML=(d.histo||"").replace(/\n/g,"<br>");
+  if(nr)nr.style.display=(d.noms||d.prog||d.histo)?"block":"none";
+  toast("\u00c9lections : donn\u00e9es enregistr\u00e9es");
+}
+
+// Calendrier CE sauvegardable
+var CE_DATES=[];
+function initCalCE(){
+  try{var s=localStorage.getItem("cgt93_ce_dates");if(s)CE_DATES=JSON.parse(s);}catch(e){}
+  renderCalCE();
+}
+function addCEDate(){
+  var dt=(document.getElementById("ce-add-date")||{value:""}).value;
+  var hr=(document.getElementById("ce-add-heure")||{value:"09:00"}).value;
+  var lieu=(document.getElementById("ce-add-lieu")||{value:""}).value.trim();
+  var odj=(document.getElementById("ce-add-odj")||{value:""}).value.trim();
+  if(!dt){toast("Date obligatoire");return;}
+  CE_DATES.push({dt:dt,hr:hr,lieu:lieu,odj:odj});
+  CE_DATES.sort(function(a,b){return a.dt.localeCompare(b.dt);});
+  try{localStorage.setItem("cgt93_ce_dates",JSON.stringify(CE_DATES));}catch(e){}
+  renderCalCE();
+  var el=document.getElementById("ce-add-date");if(el)el.value="";
+  var el2=document.getElementById("ce-add-lieu");if(el2)el2.value="";
+  var el3=document.getElementById("ce-add-odj");if(el3)el3.value="";
+  toast("Date CE ajout\u00e9e");
+}
+function delCE(i){
+  CE_DATES.splice(i,1);
+  try{localStorage.setItem("cgt93_ce_dates",JSON.stringify(CE_DATES));}catch(e){}
+  renderCalCE();
+}
+function renderCalCE(){
+  var c=document.getElementById("cal-ce-list");if(!c)return;c.innerHTML="";
+  if(!CE_DATES.length){
+    c.innerHTML='<div style="text-align:center;padding:20px;color:var(--t4);font-size:13px">Aucune date enregistr\u00e9e.<br>Ajoutez vos r\u00e9unions CE ci-dessous.</div>';return;
+  }
+  var today=new Date();today.setHours(0,0,0,0);
+  var mm=["jan","f\u00e9v","mar","avr","mai","jun","jul","ao\u00fb","sep","oct","nov","d\u00e9c"];
+  CE_DATES.forEach(function(ce,i){
+    var dt=new Date(ce.dt);
+    var isNext=dt>=today;
+    var div=document.createElement("div");div.className="kb";
+    var dtF=dt.getDate()+" "+mm[dt.getMonth()]+" "+dt.getFullYear();
+    div.innerHTML='<div class="kbh"><span class="kn">'+dtF+' \u2014 '+ce.hr+'</span>'+
+      '<span class="kbadge'+(isNext?"":" off")+'">R\u00e9union CE</span>'+
+      '<button onclick="delCE('+i+')" style="background:none;border:none;color:var(--t4);cursor:pointer;font-size:14px;margin-left:8px">\u2715</button></div>'+
+      '<div class="kr"><div class="kd"><div class="kdd">'+dt.getDate()+'</div><div class="kdj">'+mm[dt.getMonth()]+'</div></div>'+
+      '<div><div class="kit">R\u00e9union de CE</div>'+
+      (ce.lieu?'<div class="kis">\uD83D\uDCCD '+ce.lieu+'</div>':"")+
+      (ce.odj?'<div class="kis">&#128203; '+ce.odj+'</div>':"")+
+      '</div></div>';
+    c.appendChild(div);
+  });
+}
+
+// ═══ SIMULATEUR PAIE ═══
+function gv(id){return parseFloat(document.getElementById(id)&&document.getElementById(id).value)||0;}
+function simCalc(){
+  var brut=gv("sim-brut");
+  if(!brut){document.getElementById("sim-result").classList.remove("on");return;}
+  var ir=gv("sim-ir"), sf=gv("sim-sf"), ish=gv("sim-ish"), pt=gv("sim-pt"), psr=gv("sim-psr");
+  var astr=gv("sim-astr"), csgcomp=gv("sim-csgcomp");
+  var hs1=gv("sim-hs1"), hs2=gv("sim-hs2"), hs3=gv("sim-hs3"), hs4=gv("sim-hs4"), hs5=gv("sim-hs5");
+  var totalHS=hs1+hs2+hs3+hs4+hs5;
+  var primes=ir+sf+ish+pt+psr+astr+csgcomp;
+  var brutTotal=brut+primes+totalHS;
+  // Retenues salariales (taux réels du bulletin)
+  var csgND=brutTotal*0.028;   // CSG non déductible ~2,8%
+  var csgD=brutTotal*0.068;    // CSG déductible ~6,8% (ensemble CSG = 9,7% - CRDS 0,5% ≈ 9,2% dont 6,8 déd.)
+  var crds=brutTotal*0.005;    // CRDS 0,5%
+  var retPC=249.17;            // Retenue PC (valeur réelle du bulletin)
+  var rafp=brut*0.01;          // RAFP 1% du traitement
+  var reductHS=totalHS*0.05;   // Réduction cotisations HS
+  var totalDed=csgND+csgD+crds+retPC+rafp-reductHS;
+  var netAvantIR=brutTotal-totalDed;
+  var ir_taux=0.074;           // Taux personnalisé 7,4%
+  var irPAS=netAvantIR*ir_taux;
+  var net=netAvantIR-irPAS;
+  var cotSyn=brut*0.01;
+  var reduct=cotSyn*0.66;
+  var f=function(v){return v.toFixed(2)+" \u20ac";};
+  document.getElementById("r-brut").textContent=f(brut);
+  document.getElementById("r-hs").textContent=f(totalHS);
+  document.getElementById("r-primes").textContent=f(primes);
+  document.getElementById("r-brut-tot").textContent=f(brutTotal);
+  document.getElementById("r-csg").textContent="-"+f(csgND+csgD+crds);
+  document.getElementById("r-ret").textContent="-"+f(retPC);
+  document.getElementById("r-rafp").textContent="-"+f(rafp);
+  document.getElementById("r-redhs").textContent="+"+f(reductHS);
+  document.getElementById("r-net-ir").textContent=f(netAvantIR);
+  document.getElementById("r-irpas").textContent="-"+f(irPAS)+" (7,4%)";
+  document.getElementById("r-net").textContent=f(net);
+  document.getElementById("r-cotsyn").textContent="-"+f(cotSyn);
+  document.getElementById("r-reduct").textContent=f(reduct);
+  document.getElementById("sim-result").classList.add("on");
+}
+
+// ═══ WINDOW LOAD ═══
+// ═══ ACTUALITÉS ═══
+var ACTUS=[];
+function initActus(){
+  try{var s=localStorage.getItem("cgt93_actus");if(s)ACTUS=JSON.parse(s);}catch(e){}
+  renderActus();
+}
+function addActu(){
+  var dt=(document.getElementById("ac-date")||{value:""}).value;
+  var tag=(document.getElementById("ac-tag")||{value:"INFO"}).value;
+  var titre=(document.getElementById("ac-titre")||{value:""}).value.trim();
+  var body=(document.getElementById("ac-body")||{value:""}).value.trim();
+  if(!dt||!titre){toast("Date et titre obligatoires");return;}
+  var dtF=new Date(dt).toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"});
+  ACTUS.unshift({dt:dt,dtF:dtF,tag:tag,titre:titre,body:body});
+  try{localStorage.setItem("cgt93_actus",JSON.stringify(ACTUS));}catch(e){}
+  renderActus();
+  var el=document.getElementById("ac-titre");if(el)el.value="";
+  var el2=document.getElementById("ac-body");if(el2)el2.value="";
+  var el3=document.getElementById("ac-date");if(el3)el3.value=new Date().toISOString().split("T")[0];
+  toast("Actualité publiée");
+}
+function delActu(i){
+  ACTUS.splice(i,1);
+  try{localStorage.setItem("cgt93_actus",JSON.stringify(ACTUS));}catch(e){}
+  renderActus();
+}
+function renderActus(){
+  var c=document.getElementById("actu-list");
+  var e=document.getElementById("actu-empty");
+  if(!c)return;
+  c.innerHTML="";
+  if(!ACTUS.length){if(e)e.style.display="block";return;}
+  if(e)e.style.display="none";
+  ACTUS.forEach(function(a,i){
+    var div=document.createElement("div");div.className="ac";
+    div.innerHTML='<div class="at">'+
+      '<div class="ad">'+a.dtF+'</div>'+
+      '<div style="display:flex;align-items:center;justify-content:space-between">'+
+      '<div class="an">'+a.titre+'</div>'+
+      '<button onclick="delActu('+i+')" style="background:none;border:none;color:var(--t4);cursor:pointer;font-size:15px;padding:2px 6px">✕</button>'+
+      '</div></div>'+
+      '<div class="ab">'+(a.body||"")+'<br><span class="tg">'+a.tag+'</span></div>';
+    c.appendChild(div);
+  });
+}
+
+window.addEventListener("load",function(){
+  var d=new Date().toISOString().split("T")[0];
+  var rd=document.getElementById("rd"); if(rd)rd.value=d;
+  var ad=document.getElementById("an-date"); if(ad)ad.value=d;
+  var sd=document.getElementById("sig-date"); if(sd)sd.value=d;
+  var acd=document.getElementById("ac-date");if(acd)acd.value=new Date().toISOString().split("T")[0];
+  renderCal(2026);
+  initActus();
+  initAdhStats();
+  renderAdh(ADHERENTS);
+  initCotisStatus();
+  initBudget();
+  initSignaux();
+  initAgenda();
+  initElections();
+  initCalCE();
+  simCalc();
+  Minit();
+  Pinit();
+  Finit();
+  Sinit();
+  setInterval(Pinit,60000);
+});
+
+
+// ═══ METEO ══════════════════════════════════════════════════════════
+var MWC={0:"Ciel dégagé",1:"Principalement dégagé",2:"Partiellement nuageux",3:"Couvert",45:"Brouillard",51:"Bruine légère",61:"Pluie légère",63:"Pluie modérée",65:"Pluie forte",71:"Neige légère",80:"Averses légères",81:"Averses modérées",95:"Orage"};
+var MJCS=["Dim","Lun","Mar","Mer","Jeu","Ven","Sam"];
+var MBUSY=false,MTIMER=null;
+function Mdsc(c){return MWC[c]||"Variable";}
+function Mico(c){if(c<=1)return"☀️";if(c<=2)return"⛅";if(c<=3)return"☁️";if(c<=45)return"??️";if(c<=55)return"??️";if(c<=67)return"??️";if(c<=75)return"❄️";if(c<=82)return"??️";return"⛈️";}
+function Mtc(t){if(t<=0)return"#7ab8f5";if(t<=10)return"#64b5f6";if(t<=20)return"#81c784";if(t<=27)return"#f5a623";return"#ef5350";}
+function Msave(d){try{localStorage.setItem("cgt_mw6",JSON.stringify({ts:Date.now(),d:d}));}catch(e){}}
+function Mget(){try{var s=localStorage.getItem("cgt_mw6");if(s)return JSON.parse(s).d;}catch(e){}return null;}
+function Mrender(d,fr){
+  var A=d.a,J=d.j,lv=d.lv,cs=d.cs,N=new Date();
+  var h='<div class="mn"><div class="mi">'+Mico(A.c)+'</div><div class="mr">'
+    +'<div class="mt" style="color:'+Mtc(A.t)+'">'+A.t+'<sup>°</sup></div>'
+    +'<div class="md">'+A.d+'</div>'
+    +'<div class="mf">Ressenti '+A.r+'°C</div>'
+    +'<div class="mm2">↓<b>'+A.mn+'°</b> ↑<b>'+A.mx+'°</b></div>'
+    +'</div></div>'
+    +'<div class="ms">'
+    +'<div class="msi"><div class="msie">&#128168;</div><div class="msiv">'+A.w+'</div><div class="msil">km/h</div></div>'
+    +'<div class="msi"><div class="msie">&#128167;</div><div class="msiv">'+A.h+'%</div><div class="msil">Humid.</div></div>'
+    +'<div class="msi"><div class="msie">&#9728;</div><div class="msiv">'+A.u+'</div><div class="msil">UV</div></div>'
+    +'<div class="msi"><div class="msie">&#127777;</div><div class="msiv">'+A.p+'</div><div class="msil">hPa</div></div>'
+    +'</div><div class="mda">';
+  J.forEach(function(j){
+    h+='<div class="mdi'+(j.t?" td":"")+'"><div class="mdn">'+j.n+'</div>'
+      +'<div class="mdic">'+Mico(j.c)+'</div><div class="mdd">'+Mdsc(j.c)+'</div>'
+      +'<div class="mdmx" style="color:'+Mtc(j.mx)+'">'+j.mx+'°</div>'
+      +'<div class="mdmn">'+j.mn+'°</div>'
+      +'<div class="mdp">'+(j.p>15?'&#128167;'+j.p+'%':'')+'</div></div>';
+  });
+  h+='</div>';
+  var sm=parseInt(lv.slice(0,2))*60+parseInt(lv.slice(3));
+  var ss2=parseInt(cs.slice(0,2))*60+parseInt(cs.slice(3));
+  var pr=Math.max(0,Math.min(100,Math.round(((N.getHours()*60+N.getMinutes()-sm)/(ss2-sm))*100)));
+  h+='<div class="msu"><div class="msus"><b>'+lv+'</b>Lever</div>'
+    +'<div class="msub"><div class="msubf" style="width:'+pr+'%"></div></div>'
+    +'<div class="msus">Coucher<b>'+cs+'</b></div></div>';
+  var bd=document.getElementById("Mbody");if(bd)bd.innerHTML=h;
+  var mj=document.getElementById("Mmaj");
+  if(mj)mj.textContent=(fr==="api"?"En direct":"Cache")+" — "+N.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
+}
+function Mparse(raw){
+  var C=raw.current,D=raw.daily;
+  var A={t:Math.round(C.temperature_2m),r:Math.round(C.apparent_temperature),c:C.weathercode,
+    d:Mdsc(C.weathercode),w:Math.round(C.windspeed_10m),h:Math.round(C.relative_humidity_2m),
+    p:Math.round(C.surface_pressure),u:Math.round(C.uv_index||0),
+    mn:Math.round(D.temperature_2m_min[0]),mx:Math.round(D.temperature_2m_max[0])};
+  var J=[];
+  for(var j=0;j<5;j++){
+    var jd=new Date(D.time[j]+"T12:00:00");
+    J.push({n:j===0?"Auj.":MJCS[jd.getDay()]+" "+jd.getDate(),
+      c:D.weathercode[j],mx:Math.round(D.temperature_2m_max[j]),
+      mn:Math.round(D.temperature_2m_min[j]),p:D.precipitation_probability_max[j]||0,t:j===0});
+  }
+  return{a:A,j:J,lv:D.sunrise[0].slice(11,16),cs:D.sunset[0].slice(11,16)};
+}
+function Mfetch(force){
+  if(MBUSY&&!force)return;
+  MBUSY=true;
+  var btn=document.getElementById("Mbtn");if(btn){btn.textContent="...";btn.disabled=true;}
+  var url="https://api.open-meteo.com/v1/forecast?latitude=48.9362&longitude=2.3597"
+    +"&current=temperature_2m,apparent_temperature,weathercode,windspeed_10m,relative_humidity_2m,surface_pressure,uv_index"
+    +"&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunrise,sunset"
+    +"&wind_speed_unit=kmh&timezone=Europe%2FParis&forecast_days=5";
+  function ok(txt){
+    try{var d=Mparse(JSON.parse(txt));Msave(d);Mrender(d,"api");}catch(e){err();}
+    MBUSY=false;if(btn){btn.textContent="?? Actualiser";btn.disabled=false;}
+  }
+  function err(){
+    MBUSY=false;if(btn){btn.textContent="?? Actualiser";btn.disabled=false;}
+    var c=Mget();
+    if(c){Mrender(c,"cache");}
+    else{var b=document.getElementById("Mbody");if(b)b.innerHTML='<div class="mmsg">Pas de connexion.<br><button class="mbtn" onclick="Mfetch(true)" style="margin-top:8px">Réessayer</button></div>';}
+  }
+  try{
+    fetch(url).then(function(r){return r.text();}).then(ok).catch(function(){
+      var x=new XMLHttpRequest();x.open("GET",url,true);x.timeout=8000;
+      x.onload=function(){x.status===200?ok(x.responseText):err();};
+      x.onerror=x.ontimeout=err;x.send();
+    });
+  }catch(e){
+    var x=new XMLHttpRequest();x.open("GET",url,true);x.timeout=8000;
+    x.onload=function(){x.status===200?ok(x.responseText):err();};
+    x.onerror=x.ontimeout=err;x.send();
+  }
+}
+function Minit(){
+  var c=Mget();
+  if(c)Mrender(c,"cache");
+  else{var b=document.getElementById("Mbody");if(b)b.innerHTML='<div class="mmsg">Chargement météo...</div>';}
+  Mfetch(false);
+  if(MTIMER)clearInterval(MTIMER);
+  MTIMER=setInterval(function(){Mfetch(false);},15*60*1000);
+}
+
+// ═══ PAYE (28 du mois) ══════════════════════════════════════════════
+function Pinit(){
+  function pd(yr,mo){
+    var d=new Date(yr,mo,28);
+    while(d.getDay()===0||d.getDay()===6)d.setDate(d.getDate()-1);
+    return d;
+  }
+  var JJ=["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+  var MM=["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+  var now=new Date();now.setHours(0,0,0,0);
+  var curr=pd(now.getFullYear(),now.getMonth());
+  var next,prev;
+  if(now<=curr){next=curr;prev=(now.getMonth()===0)?pd(now.getFullYear()-1,11):pd(now.getFullYear(),now.getMonth()-1);}
+  else{prev=curr;next=(now.getMonth()===11)?pd(now.getFullYear()+1,0):pd(now.getFullYear(),now.getMonth()+1);}
+  var diff=Math.round((next-now)/86400000);
+  var span=Math.round((next-prev)/86400000);
+  var pct=Math.min(100,Math.max(0,Math.round(((span-diff)/span)*100)));
+  var ed=document.getElementById("Pdate");if(ed)ed.textContent=JJ[next.getDay()]+" "+next.getDate()+" "+MM[next.getMonth()]+" "+next.getFullYear();
+  var el=document.getElementById("Plbl");if(el)el.textContent=diff===0?"Paye aujourd’hui !":diff===1?"Demain !":"Prochaine paye dans";
+  var en=document.getElementById("Pn");if(en)en.textContent=diff===0?"✓":String(diff);
+  var ef=document.getElementById("Pbar");if(ef)ef.style.width=pct+"%";
+  var ep=document.getElementById("Ppct");if(ep)ep.textContent=pct+"% du cycle";
+}
+
+// ═══ JOURS FERIES 2026 ══════════════════════════════════════════════
+function Finit(){
+  var now=new Date();now.setHours(0,0,0,0);
+  var F=[
+    [2026,0,1,"Jour de l’An"],
+    [2026,3,5,"Pâques"],
+    [2026,3,6,"Lundi de Pâques"],
+    [2026,4,1,"Fête du Travail ✊"],
+    [2026,4,8,"Victoire 1945"],
+    [2026,4,14,"Ascension"],
+    [2026,4,25,"Lundi de Pentecôte"],
+    [2026,6,14,"Fête Nationale"],
+    [2026,7,15,"Assomption"],
+    [2026,10,1,"Toussaint"],
+    [2026,10,11,"Armistice 1918"],
+    [2026,11,25,"Noël"]
+  ];
+  var JC=["Dim","Lun","Mar","Mer","Jeu","Ven","Sam"];
+  var MC=["jan","fév","mar","avr","mai","jun","jul","aoû","sep","oct","nov","déc"];
+  var c=document.getElementById("Flist");if(!c)return;c.innerHTML="";
+  var ok=false;
+  F.forEach(function(f){
+    var d=new Date(f[0],f[1],f[2]);
+    var diff=Math.round((d-now)/86400000);
+    if(diff<-1)return;
+    var isN=!ok&&diff>=0;if(isN)ok=true;
+    var el=document.createElement("div");
+    el.className="frow"+(isN?" fn":"");
+    var nc=isN?"fnb fx":diff<0?"fnb":diff<=14?"fnb fs":"fnb";
+    var dt=diff===0?"Auj.":diff===1?"Dem.":diff<0?"✓":diff+"j";
+    el.innerHTML='<div class="'+nc+'">'+dt+'</div>'
+      +'<div class="fnom">'+f[3]+'</div>'
+      +'<div class="fdat">'+JC[d.getDay()]+" "+d.getDate()+" "+MC[d.getMonth()]+'</div>';
+    c.appendChild(el);
+  });
+}
+
+// ═══ STATS ══════════════════════════════════════════════════════════
+function Sinit(){
+  var tot=ADHERENTS.length,rosny=0,cot=0,corps={};
+  ADHERENTS.forEach(function(a){
+    if((a[9]||"").indexOf("ROSNY")>=0)rosny++;
+    cot+=parseFloat(a[14])||0;
+    var g=(a[7]||"?").trim();corps[g]=(corps[g]||0)+1;
+  });
+  var sw=document.getElementById("Slist");if(!sw)return;
+  var h='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px 14px">'
+    +'<div style="background:#132238;border-radius:10px;padding:12px 8px;text-align:center"><div style="font-family:var(--fh);font-size:28px;font-weight:900">'+tot+'</div><div style="font-size:9px;color:#3d6080;text-transform:uppercase;letter-spacing:1px;margin-top:3px">Total</div></div>'
+    +'<div style="background:#132238;border-radius:10px;padding:12px 8px;text-align:center"><div style="font-family:var(--fh);font-size:28px;font-weight:900">'+rosny+'</div><div style="font-size:9px;color:#3d6080;text-transform:uppercase;letter-spacing:1px;margin-top:3px">Rosny</div></div>'
+    +'<div style="background:#132238;border-radius:10px;padding:12px 8px;text-align:center"><div style="font-family:var(--fh);font-size:28px;font-weight:900;color:#f5a623">'+cot.toFixed(0)+'€</div><div style="font-size:9px;color:#3d6080;text-transform:uppercase;letter-spacing:1px;margin-top:3px">Cotis/mois</div></div>'
+    +'</div><div style="padding:4px 16px 14px">';
+  var list=Object.keys(corps).sort(function(a,b){return corps[b]-corps[a];});
+  var mx=corps[list[0]]||1;
+  var COLS={"CEEP":"#c62828","CEED":"#880e4f","AEP":"#e53935","TS B1":"#1565c0","TS B3":"#0d47a1","TS":"#1976d2"};
+  list.forEach(function(g){
+    var n=corps[g],pct=Math.round((n/mx)*100),col=COLS[g]||"#2563b0";
+    h+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">'
+      +'<div style="font-size:11px;color:#8aadcc;min-width:54px;text-align:right;font-family:var(--fh);font-weight:700">'+g+'</div>'
+      +'<div style="flex:1;height:18px;background:#132238;border-radius:4px;overflow:hidden">'
+      +'<div style="width:'+pct+'%;height:100%;background:'+col+';border-radius:4px;display:flex;align-items:center;padding-left:6px;font-family:var(--fh);font-size:11px;font-weight:800;color:#fff">'+n+'</div></div></div>';
+  });
+  sw.innerHTML=h+'</div>';
+}
+
+// ═══ COTISATION RAPIDE ══════════════════════════════════════════════
+function CRcalc(mode){
+  var brut=0;
+  if(mode===1){
+    var i=parseFloat(document.getElementById("CRidx").value||"0");
+    if(!i){document.getElementById("CRres").classList.remove("on");return;}
+    brut=i*4.92748;
+    document.getElementById("CRbrut").value=brut.toFixed(2);
+  }else{
+    brut=parseFloat((document.getElementById("CRbrut").value||"0").replace(",","."));
+    document.getElementById("CRidx").value="";
+    if(!brut){document.getElementById("CRres").classList.remove("on");return;}
+  }
+  document.getElementById("CRm").textContent=(brut*0.01).toFixed(2)+" € / mois";
+  document.getElementById("CRa").textContent=(brut*0.12).toFixed(2)+" €";
+  document.getElementById("CRres").classList.add("on");
+}
+
+// ═══ ANIMATION CGT BRISE FO ═════════════════════════════════════════
+(function(){
+  var cv=document.getElementById("gcv");if(!cv)return;
+  var cx=cv.getContext("2d");
+  function rsz(){var b=cv.parentElement;cv.width=b.offsetWidth;cv.height=b.offsetHeight;}rsz();
+  window.addEventListener("resize",rsz);
+  var fr=0,ph=0,pt=0,sk=0,fl=0,sc=0,fa=1,ca=0,fx=0,fv=-12,db=[];
+  function ini(){ph=0;pt=0;sk=0;fl=0;sc=0;fa=1;ca=0;db=[];fx=cv.width+100;}
+  function spw(){for(var i=0;i<40;i++){var a=Math.random()*Math.PI*2,sp=2+Math.random()*8;
+    db.push({x:cv.width/2+100,y:cv.height/2,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp-3,al:1,sz:3+Math.random()*8,c:["#FFD700","#FFA500","#FF6600","#fff"][fr%4],r:0,rv:(Math.random()-.5)*.3});}}
+  function dtx(t,x,y,sz,col,al,s2){cx.save();cx.globalAlpha=al;cx.translate(x,y);cx.scale(s2,s2);
+    cx.shadowColor=col;cx.shadowBlur=18;cx.font="bold "+sz+"px 'Barlow Condensed',Impact,sans-serif";
+    cx.textAlign="center";cx.textBaseline="middle";cx.strokeStyle="rgba(0,0,0,.8)";cx.lineWidth=4;
+    cx.strokeText(t,0,0);cx.fillStyle=col;cx.fillText(t,0,0);cx.restore();}
+  function upd(){var W=cv.width,H=cv.height;pt++;
+    if(ph===0){ca=Math.min(1,ca+.05);sc=Math.min(1,sc+.06);if(pt>40)ph=1;}
+    else if(ph===1){if(fx>W/2+180){fx+=fv;fv=Math.max(fv,-18);}else{ph=2;pt=0;sk=15;fl=1;spw();}}
+    else if(ph===2){sk=Math.max(0,sk-.8);fl=Math.max(0,fl-.06);fa=Math.max(0,fa-.06);if(pt>30){ph=3;pt=0;}}
+    else if(ph===3){sk=0;if(pt>120){ph=4;pt=0;}}
+    else if(ph===4){if(pt>40)ini();}
+    db.forEach(function(d){d.x+=d.vx;d.y+=d.vy;d.vy+=.3;d.vx*=.98;d.al-=.015;d.r+=d.rv;d.sz*=.98;});
+    db=db.filter(function(d){return d.al>0;});fr++;}
+  function drw(){var W=cv.width,H=cv.height;cx.clearRect(0,0,W,H);
+    var g=cx.createLinearGradient(0,0,W,H);g.addColorStop(0,"#0a0010");g.addColorStop(1,"#100020");
+    cx.fillStyle=g;cx.fillRect(0,0,W,H);
+    if(fl>0){cx.save();cx.globalAlpha=fl*.7;cx.fillStyle="#ff8800";cx.fillRect(0,0,W,H);cx.restore();}
+    var sx=sk>0?(Math.random()-.5)*sk:0,sy=sk>0?(Math.random()-.5)*sk:0;
+    cx.save();cx.translate(sx,sy);
+    db.forEach(function(d){cx.save();cx.globalAlpha=Math.max(0,d.al);cx.translate(d.x,d.y);cx.rotate(d.r);cx.fillStyle=d.c;cx.fillRect(-d.sz/2,-d.sz/2,d.sz,d.sz);cx.restore();});
+    if(ca>0){var pu=ph>=3?1+Math.sin(fr*.1)*.04:1;dtx("CGT",W/2,H/2,54,"#c62828",ca,sc*pu);}
+    if(fa>0)dtx("FO",fx,H/2,46,"#1565c0",fa,1+(1-fa)*2);
+    if(ph===3){var tp=Math.min(1,pt/20);cx.save();cx.globalAlpha=tp*.9;cx.font="bold 13px 'Barlow Condensed',sans-serif";cx.textAlign="center";cx.fillStyle="#FFD700";cx.shadowColor="#FFD700";cx.shadowBlur=10;cx.fillText("ENSEMBLE ON EST PLUS FORTS !",W/2,H/2+36);cx.restore();}
+    cx.restore();}
+  function loop(){upd();drw();requestAnimationFrame(loop);}
+  ini();loop();
+})();
+
+</script>
+</body>
+</html>
